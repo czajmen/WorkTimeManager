@@ -68,6 +68,13 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CompanyRaport.cs" />
+    <Compile Include="CompanyReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CompanyReport.Designer.cs">
+      <DependentUpon>CompanyReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseControl.cs" />
     <Compile Include="departments.cs" />
     <Compile Include="HelloScreen.cs">
@@ -119,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyReport.resx">
+      <DependentUpon>CompanyReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HelloScreen.resx">
       <DependentUpon>HelloScreen.cs</DependentUpon>

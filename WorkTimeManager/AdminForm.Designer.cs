@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.raportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.podsumowanieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ogólnoFirmowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pracownicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rejestracjaNowegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńObecnegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +39,7 @@
             this.userModify1 = new WorkTimeManager.UserModify();
             this.helloScreen1 = new WorkTimeManager.HelloScreen();
             this.userRegister1 = new WorkTimeManager.UserRegister1();
-            this.ogólnoFirmowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.companyReport1 = new WorkTimeManager.CompanyReport();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,13 @@
             this.podsumowanieToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.podsumowanieToolStripMenuItem.Text = "Pracowniczy";
             this.podsumowanieToolStripMenuItem.Click += new System.EventHandler(this.podsumowanieToolStripMenuItem_Click);
+            // 
+            // ogólnoFirmowyToolStripMenuItem
+            // 
+            this.ogólnoFirmowyToolStripMenuItem.Name = "ogólnoFirmowyToolStripMenuItem";
+            this.ogólnoFirmowyToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.ogólnoFirmowyToolStripMenuItem.Text = "Ogólno firmowy";
+            this.ogólnoFirmowyToolStripMenuItem.Click += new System.EventHandler(this.ogólnoFirmowyToolStripMenuItem_Click);
             // 
             // pracownicyToolStripMenuItem
             // 
@@ -120,17 +128,19 @@
             this.userRegister1.Size = new System.Drawing.Size(393, 370);
             this.userRegister1.TabIndex = 1;
             // 
-            // ogólnoFirmowyToolStripMenuItem
+            // companyReport1
             // 
-            this.ogólnoFirmowyToolStripMenuItem.Name = "ogólnoFirmowyToolStripMenuItem";
-            this.ogólnoFirmowyToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.ogólnoFirmowyToolStripMenuItem.Text = "Ogólno firmowy";
+            this.companyReport1.Location = new System.Drawing.Point(50, 27);
+            this.companyReport1.Name = "companyReport1";
+            this.companyReport1.Size = new System.Drawing.Size(829, 519);
+            this.companyReport1.TabIndex = 5;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 581);
+            this.Controls.Add(this.companyReport1);
             this.Controls.Add(this.workerRaport1);
             this.Controls.Add(this.userModify1);
             this.Controls.Add(this.helloScreen1);
@@ -159,6 +169,7 @@
         private UserModify userModify1;
         private WorkerRaport workerRaport1;
         private System.Windows.Forms.ToolStripMenuItem ogólnoFirmowyToolStripMenuItem;
+        private CompanyReport companyReport1;
 
     }
 }

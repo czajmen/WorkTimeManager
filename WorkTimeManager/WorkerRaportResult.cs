@@ -20,7 +20,8 @@ namespace WorkTimeManager
         public DayWorkerRaportResult()
         {
             InitializeComponent();
-           
+
+
         }
 
         public void generate(string UserForRaport,string date,int which)
@@ -42,9 +43,7 @@ namespace WorkTimeManager
             {
                 dataGridView1.DataSource = GetDataGrid(tmpworker[0], tmpworker[1], tmpdate[2], tmpdate[1], null);
             }
-           
-           
-
+            
         }
 
    
@@ -55,7 +54,6 @@ namespace WorkTimeManager
             {
 
                 string queryText;
-
                 month = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month.ToString();  //Konwersja miesiaca pisanego na liczbę  "Czerwiec" -> "6"
                 if(string.IsNullOrEmpty(day))
                 {
@@ -70,7 +68,6 @@ namespace WorkTimeManager
                 Data = DataBaseControl.SelecTest(conn, queryText);
 
                 return Data;  
-
             }
             catch (MySqlException myexc)
             {

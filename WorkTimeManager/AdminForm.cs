@@ -26,6 +26,7 @@ namespace WorkTimeManager
            userRegister1.Visible = false;   //Kontrolka do rejestracji użytkownika jest dodana od początku do formy ale ukryta (hide) po kliknieciu w toolbar jest pokazywana a ekran powitalny ukrywany
            userModify1.Visible = false;
            workerRaport1.Visible = false;
+           companyReport1.Visible = false;
        
 
         }
@@ -52,6 +53,15 @@ namespace WorkTimeManager
             workerRaport1.Visible = true;
             userModify1.Visible = false;
             userRegister1.Visible = false;
+        }
+
+        private void ogólnoFirmowyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            helloScreen1.Visible = false; //Ukrywa ekran powitalny 
+            workerRaport1.Visible = false;
+            userModify1.Visible = false;
+            userRegister1.Visible = false;
+            companyReport1.Visible = true;
         }
 
   
