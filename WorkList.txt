@@ -1,0 +1,18 @@
+12.05.2016
+	Kamil:
+-Ca³y interfejs logowania
+-Klasa db 
+-szkielet klasy user
+
+19.05.2016
+	Kamil:
+-Przypisywanie informacji o u¿ytkowniku pod obiekt
+-Podstawowy szkielet dodawania nowych pracowników przez administratora
+
+24.05.2016
+	Kamil:
+-Elementy dodawania u¿ytkowników (wype³anianie comboboxów danymi z bazy)
+
+31.05.2016
+	Kamil
+-Elementy kontrolki dodaj¹cej u¿ytkowników
