@@ -27,6 +27,7 @@ namespace WorkTimeManager
            userModify1.Visible = false;
            workerRaport1.Visible = false;
            companyReport1.Visible = false;
+           
        
 
         }
@@ -37,6 +38,8 @@ namespace WorkTimeManager
             helloScreen1.Visible = false; //Ukrywa ekran powitalny 
             workerRaport1.Visible = false;
             userModify1.Visible = false;
+            companyReport1.Visible = false;
+
         }
 
         private void usuńObecnegoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +48,7 @@ namespace WorkTimeManager
             userModify1.Visible = true;
             workerRaport1.Visible = false;
             workerRaport1.Visible = false;
+            companyReport1.Visible = false;
         }
 
         private void podsumowanieToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,6 +57,7 @@ namespace WorkTimeManager
             workerRaport1.Visible = true;
             userModify1.Visible = false;
             userRegister1.Visible = false;
+            companyReport1.Visible = false;
         }
 
         private void ogólnoFirmowyToolStripMenuItem_Click(object sender, EventArgs e)

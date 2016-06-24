@@ -31,18 +31,22 @@ namespace WorkTimeManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Mraport.Checked)  //raport miesięczny
-            {
-                dataGridView1.DataSource = raport.getWorkersGrid();
-                dataGridView2.DataSource = raport.getDepartmensGrid();
+            if (Mraport.Checked)  //raport roczny
+            {               
+                string year = dateTimePicker1.Text.ToString();
 
+                dataGridView1.DataSource = raport.getWorkersGrid(null, year);
+                dataGridView2.DataSource = raport.getDepartmensGrid(null, year);   
 
             }
-            else if (Draport.Checked)  //Raport roczny
+            else if (Draport.Checked)  //Raport miesięczny
             {
-                dataGridView1.DataSource = raport.getWorkersGrid();
-                dataGridView2.DataSource = raport.getDepartmensGrid();              
-           }
+                string[] date = dateTimePicker2.Text.ToString().Split(' ');
+
+                dataGridView1.DataSource = raport.getWorkersGrid(date[0], date[1]);
+                dataGridView2.DataSource = raport.getDepartmensGrid(date[0], date[1]);
+                
+            }
             else
             {
                 MessageBox.Show("Uzupełnij wszyskie pola aby wygenerować raport!");

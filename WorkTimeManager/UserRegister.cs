@@ -32,7 +32,13 @@ namespace WorkTimeManager
                 Department_Register.Items.Add(tmp[1]);
             }
 
-            Department_Register.SelectedIndex = 0;     
+            Department_Register.SelectedIndex = 0;
+
+
+         //   this.comboBoxType.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            Role_Register.DropDownStyle = ComboBoxStyle.DropDownList;
+            Department_Register.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void clear()

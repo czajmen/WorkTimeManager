@@ -30,7 +30,10 @@ namespace WorkTimeManager
                 Department_modify.Items.Add(tmp[1]);
             }
 
-            Department_modify.SelectedIndex = 0;     
+            Department_modify.SelectedIndex = 0;
+
+            Role_modify.DropDownStyle = ComboBoxStyle.DropDownList;
+            Department_modify.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
