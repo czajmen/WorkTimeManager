@@ -29,14 +29,36 @@ namespace WorkTimeManager
         private void Insert_Click(object sender, EventArgs e)
         {
             string insert;
-            insert= "insert into worklist values(null,1,'twew',2000-12-08,2000-09-13)";
-            raport test22 = new raport(insert); 
-          
+            string rok;
+            string title;
+            title = Topic.Text.ToString();
+            
+            rok = monthCalendar.SelectionStart.Year.ToString() +"0"+ monthCalendar.SelectionStart.Month.ToString() + monthCalendar.SelectionStart.Day.ToString();
+            
+            insert= "insert into worklist values(null,1,"+title+","+rok+",2,34)";
+            raport test22 = new raport(insert);
+            
         }
 
         private void Topic_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void WorkTimeRaport_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monthCalendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+          
         }
     }
 }
