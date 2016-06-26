@@ -40,6 +40,10 @@ namespace WorkTimeManager
                 return false;
 
             }
+             catch //Gdy jest próba sql injection po zabezpieczniu wyrzuca exception w convert.toint
+            {
+                return false;
+            }
             finally
             {
                 DataBaseControl.CloseConnection(conn);
@@ -71,6 +75,10 @@ namespace WorkTimeManager
             {
                 DataBaseControl.CloseConnection(conn);
                 MessageBox.Show(myexc.Message);
+                return false;
+            }
+            catch //Gdy jest próba sql injection po zabezpieczniu wyrzuca exception w convert.toint
+            {
                 return false;
             }
             finally

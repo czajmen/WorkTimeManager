@@ -38,6 +38,8 @@ namespace WorkTimeManager
 
                 List<string> result = DataBaseControl.Select(conn, queryText);
                 stringResult = DataBaseControl.ResultToString(result);
+
+
              
 
             }
@@ -51,11 +53,13 @@ namespace WorkTimeManager
             }     
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-                
-             if (Convert.ToInt16(stringResult) > 0)
-             {
-                 this.login = login;
-                 this.setUserDetail(this.getUserID(this));
+
+            try
+            {
+                if (Convert.ToInt16(stringResult) > 0)
+                {
+                    this.login = login;
+                    this.setUserDetail(this.getUserID(this));
 
                     if (this.isAdmin == true)
                     {
@@ -69,11 +73,17 @@ namespace WorkTimeManager
                         workRapot.Show();
                         loginForm.Hide();
                     }
-             }
-             else
-             {
-                 MessageBox.Show("Nie prawidłowy Login/Hasło");
-            }   
+                }
+                else
+                {
+                    MessageBox.Show("Nie prawidłowy Login/Hasło");
+                }   
+            }
+            catch
+            {
+
+            }
+             
         }
 
 
