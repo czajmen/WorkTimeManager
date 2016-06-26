@@ -55,17 +55,19 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(284, 13);
+            this.label7.Location = new System.Drawing.Point(568, 25);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(121, 13);
+            this.label7.Size = new System.Drawing.Size(241, 25);
             this.label7.TabIndex = 29;
             this.label7.Text = "Edytuj dane pracownika";
             // 
             // Clear_register
             // 
-            this.Clear_register.Location = new System.Drawing.Point(613, 332);
+            this.Clear_register.Location = new System.Drawing.Point(1226, 638);
+            this.Clear_register.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Clear_register.Name = "Clear_register";
-            this.Clear_register.Size = new System.Drawing.Size(75, 23);
+            this.Clear_register.Size = new System.Drawing.Size(150, 44);
             this.Clear_register.TabIndex = 28;
             this.Clear_register.Text = "Wyczyść";
             this.Clear_register.UseVisualStyleBackColor = true;
@@ -73,9 +75,10 @@
             // 
             // Add_Register
             // 
-            this.Add_Register.Location = new System.Drawing.Point(532, 332);
+            this.Add_Register.Location = new System.Drawing.Point(1064, 638);
+            this.Add_Register.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Add_Register.Name = "Add_Register";
-            this.Add_Register.Size = new System.Drawing.Size(75, 23);
+            this.Add_Register.Size = new System.Drawing.Size(150, 44);
             this.Add_Register.TabIndex = 27;
             this.Add_Register.Text = "Edytuj";
             this.Add_Register.UseVisualStyleBackColor = true;
@@ -84,133 +87,150 @@
             // Role_modify
             // 
             this.Role_modify.FormattingEnabled = true;
-            this.Role_modify.Location = new System.Drawing.Point(455, 275);
+            this.Role_modify.Location = new System.Drawing.Point(910, 529);
+            this.Role_modify.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Role_modify.Name = "Role_modify";
-            this.Role_modify.Size = new System.Drawing.Size(233, 21);
+            this.Role_modify.Size = new System.Drawing.Size(462, 33);
             this.Role_modify.TabIndex = 26;
             // 
             // Department_modify
             // 
             this.Department_modify.FormattingEnabled = true;
-            this.Department_modify.Location = new System.Drawing.Point(455, 236);
+            this.Department_modify.Location = new System.Drawing.Point(910, 454);
+            this.Department_modify.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Department_modify.Name = "Department_modify";
-            this.Department_modify.Size = new System.Drawing.Size(233, 21);
+            this.Department_modify.Size = new System.Drawing.Size(462, 33);
             this.Department_modify.TabIndex = 25;
             // 
             // Surname_modify
             // 
-            this.Surname_modify.Location = new System.Drawing.Point(476, 197);
+            this.Surname_modify.Location = new System.Drawing.Point(952, 379);
+            this.Surname_modify.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Surname_modify.Name = "Surname_modify";
-            this.Surname_modify.Size = new System.Drawing.Size(212, 20);
+            this.Surname_modify.Size = new System.Drawing.Size(420, 31);
             this.Surname_modify.TabIndex = 24;
             // 
             // Name_modify
             // 
-            this.Name_modify.Location = new System.Drawing.Point(476, 152);
+            this.Name_modify.Location = new System.Drawing.Point(952, 292);
+            this.Name_modify.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name_modify.Name = "Name_modify";
-            this.Name_modify.Size = new System.Drawing.Size(212, 20);
+            this.Name_modify.Size = new System.Drawing.Size(420, 31);
             this.Name_modify.TabIndex = 23;
             // 
             // Password_modify
             // 
-            this.Password_modify.Location = new System.Drawing.Point(476, 111);
+            this.Password_modify.Location = new System.Drawing.Point(952, 213);
+            this.Password_modify.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Password_modify.Name = "Password_modify";
-            this.Password_modify.Size = new System.Drawing.Size(212, 20);
+            this.Password_modify.Size = new System.Drawing.Size(420, 31);
             this.Password_modify.TabIndex = 22;
             // 
             // Login_modify
             // 
-            this.Login_modify.Location = new System.Drawing.Point(476, 73);
+            this.Login_modify.Location = new System.Drawing.Point(952, 140);
+            this.Login_modify.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Login_modify.Name = "Login_modify";
             this.Login_modify.ReadOnly = true;
-            this.Login_modify.Size = new System.Drawing.Size(212, 20);
+            this.Login_modify.Size = new System.Drawing.Size(420, 31);
             this.Login_modify.TabIndex = 21;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(394, 275);
+            this.label6.Location = new System.Drawing.Point(788, 529);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.Size = new System.Drawing.Size(56, 25);
             this.label6.TabIndex = 20;
             this.label6.Text = "Rola";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(393, 239);
+            this.label5.Location = new System.Drawing.Point(786, 460);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(85, 25);
             this.label5.TabIndex = 19;
             this.label5.Text = "Oddział";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(394, 200);
+            this.label4.Location = new System.Drawing.Point(788, 385);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(104, 25);
             this.label4.TabIndex = 18;
             this.label4.Text = "Nazwisko";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(394, 155);
+            this.label3.Location = new System.Drawing.Point(788, 298);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(51, 25);
             this.label3.TabIndex = 17;
             this.label3.Text = "Imie";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(393, 114);
+            this.label2.Location = new System.Drawing.Point(786, 219);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.Size = new System.Drawing.Size(67, 25);
             this.label2.TabIndex = 16;
             this.label2.Text = "Haslo";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(393, 80);
+            this.label1.Location = new System.Drawing.Point(786, 154);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(65, 25);
             this.label1.TabIndex = 15;
             this.label1.Text = "Login";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 67);
+            this.textBox1.Location = new System.Drawing.Point(154, 129);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 20);
+            this.textBox1.Size = new System.Drawing.Size(450, 31);
             this.textBox1.TabIndex = 30;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 41);
+            this.label8.Location = new System.Drawing.Point(6, 79);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 13);
+            this.label8.Size = new System.Drawing.Size(240, 25);
             this.label8.TabIndex = 31;
             this.label8.Text = "Wpisz dane pracownika";
             // 
             // listBox1_modify
             // 
             this.listBox1_modify.FormattingEnabled = true;
-            this.listBox1_modify.Location = new System.Drawing.Point(77, 130);
+            this.listBox1_modify.ItemHeight = 25;
+            this.listBox1_modify.Location = new System.Drawing.Point(154, 250);
+            this.listBox1_modify.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listBox1_modify.Name = "listBox1_modify";
-            this.listBox1_modify.Size = new System.Drawing.Size(227, 134);
+            this.listBox1_modify.Size = new System.Drawing.Size(450, 254);
             this.listBox1_modify.TabIndex = 32;
             this.listBox1_modify.SelectedIndexChanged += new System.EventHandler(this.listBox1_modify_SelectedIndexChanged);
             // 
             // ID
             // 
-            this.ID.Location = new System.Drawing.Point(263, 306);
+            this.ID.Location = new System.Drawing.Point(526, 588);
+            this.ID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(100, 20);
+            this.ID.Size = new System.Drawing.Size(196, 31);
             this.ID.TabIndex = 33;
             this.ID.Visible = false;
             // 
@@ -220,7 +240,7 @@
             // 
             // UserModify
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ID);
             this.Controls.Add(this.listBox1_modify);
@@ -241,8 +261,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "UserModify";
-            this.Size = new System.Drawing.Size(711, 380);
+            this.Size = new System.Drawing.Size(1422, 731);
+            this.Load += new System.EventHandler(this.UserModify_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

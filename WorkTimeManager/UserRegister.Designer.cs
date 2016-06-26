@@ -51,106 +51,119 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 51);
+            this.label1.Location = new System.Drawing.Point(94, 98);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(65, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Login";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 85);
+            this.label2.Location = new System.Drawing.Point(94, 163);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.Size = new System.Drawing.Size(67, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Haslo";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 126);
+            this.label3.Location = new System.Drawing.Point(96, 242);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(51, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Imie";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 171);
+            this.label4.Location = new System.Drawing.Point(96, 329);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(104, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Nazwisko";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 210);
+            this.label5.Location = new System.Drawing.Point(94, 404);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(85, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Oddział";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(48, 246);
+            this.label6.Location = new System.Drawing.Point(96, 473);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.Size = new System.Drawing.Size(56, 25);
             this.label6.TabIndex = 5;
             this.label6.Text = "Rola";
             // 
             // Login_register
             // 
-            this.Login_register.Location = new System.Drawing.Point(130, 44);
+            this.Login_register.Location = new System.Drawing.Point(260, 85);
+            this.Login_register.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Login_register.Name = "Login_register";
-            this.Login_register.Size = new System.Drawing.Size(212, 20);
+            this.Login_register.Size = new System.Drawing.Size(420, 31);
             this.Login_register.TabIndex = 6;
             // 
             // Password_register
             // 
-            this.Password_register.Location = new System.Drawing.Point(130, 82);
+            this.Password_register.Location = new System.Drawing.Point(260, 158);
+            this.Password_register.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Password_register.Name = "Password_register";
-            this.Password_register.Size = new System.Drawing.Size(212, 20);
+            this.Password_register.Size = new System.Drawing.Size(420, 31);
             this.Password_register.TabIndex = 7;
             // 
             // Name_Register
             // 
-            this.Name_Register.Location = new System.Drawing.Point(130, 123);
+            this.Name_Register.Location = new System.Drawing.Point(260, 237);
+            this.Name_Register.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name_Register.Name = "Name_Register";
-            this.Name_Register.Size = new System.Drawing.Size(212, 20);
+            this.Name_Register.Size = new System.Drawing.Size(420, 31);
             this.Name_Register.TabIndex = 8;
             // 
             // Surname_Register
             // 
-            this.Surname_Register.Location = new System.Drawing.Point(130, 168);
+            this.Surname_Register.Location = new System.Drawing.Point(260, 323);
+            this.Surname_Register.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Surname_Register.Name = "Surname_Register";
-            this.Surname_Register.Size = new System.Drawing.Size(212, 20);
+            this.Surname_Register.Size = new System.Drawing.Size(420, 31);
             this.Surname_Register.TabIndex = 9;
             // 
             // Department_Register
             // 
             this.Department_Register.FormattingEnabled = true;
-            this.Department_Register.Location = new System.Drawing.Point(109, 207);
+            this.Department_Register.Location = new System.Drawing.Point(218, 398);
+            this.Department_Register.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Department_Register.Name = "Department_Register";
-            this.Department_Register.Size = new System.Drawing.Size(233, 21);
+            this.Department_Register.Size = new System.Drawing.Size(462, 33);
             this.Department_Register.TabIndex = 10;
             // 
             // Role_Register
             // 
             this.Role_Register.FormattingEnabled = true;
-            this.Role_Register.Location = new System.Drawing.Point(109, 246);
+            this.Role_Register.Location = new System.Drawing.Point(218, 473);
+            this.Role_Register.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Role_Register.Name = "Role_Register";
-            this.Role_Register.Size = new System.Drawing.Size(233, 21);
+            this.Role_Register.Size = new System.Drawing.Size(462, 33);
             this.Role_Register.TabIndex = 11;
             // 
             // Add_Register
             // 
-            this.Add_Register.Location = new System.Drawing.Point(186, 303);
+            this.Add_Register.Location = new System.Drawing.Point(372, 583);
+            this.Add_Register.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Add_Register.Name = "Add_Register";
-            this.Add_Register.Size = new System.Drawing.Size(75, 23);
+            this.Add_Register.Size = new System.Drawing.Size(150, 44);
             this.Add_Register.TabIndex = 12;
             this.Add_Register.Text = "Dodaj";
             this.Add_Register.UseVisualStyleBackColor = true;
@@ -158,9 +171,10 @@
             // 
             // Clear_register
             // 
-            this.Clear_register.Location = new System.Drawing.Point(267, 303);
+            this.Clear_register.Location = new System.Drawing.Point(534, 583);
+            this.Clear_register.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Clear_register.Name = "Clear_register";
-            this.Clear_register.Size = new System.Drawing.Size(75, 23);
+            this.Clear_register.Size = new System.Drawing.Size(150, 44);
             this.Clear_register.TabIndex = 13;
             this.Clear_register.Text = "Wyczyść";
             this.Clear_register.UseVisualStyleBackColor = true;
@@ -169,9 +183,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(127, 17);
+            this.label7.Location = new System.Drawing.Point(254, 33);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 13);
+            this.label7.Size = new System.Drawing.Size(264, 25);
             this.label7.TabIndex = 14;
             this.label7.Text = "Dodaj nowego pracownika";
             // 
@@ -181,7 +196,7 @@
             // 
             // UserRegister1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Clear_register);
@@ -198,8 +213,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "UserRegister1";
-            this.Size = new System.Drawing.Size(385, 381);
+            this.Size = new System.Drawing.Size(770, 733);
+            this.Load += new System.EventHandler(this.UserRegister1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

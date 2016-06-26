@@ -257,5 +257,10 @@ namespace WorkTimeManager
                 DataBaseControl.CloseConnection(conn);
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

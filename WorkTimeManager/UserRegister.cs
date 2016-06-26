@@ -88,5 +88,10 @@ namespace WorkTimeManager
         {
             clear();
         }
+
+        private void UserRegister1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
