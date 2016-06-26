@@ -76,5 +76,10 @@ namespace WorkTimeManager
         {
             Draport.Checked = true;
         }
+
+        private void dayWorkerRaportResult1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
