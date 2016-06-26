@@ -26,7 +26,7 @@ namespace WorkTimeManager
             Role_Register.Items.Add("Kierownik");
             Role_Register.SelectedIndex = 0;
 
-           for (int i = 0; i <= departments.ilosc+1;i++ )
+           for (int i = 0; i < departments.ilosc;i++ )
             {
                 string[] tmp = departments[i];
                 Department_Register.Items.Add(tmp[1]);

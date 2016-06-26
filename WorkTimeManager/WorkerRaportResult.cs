@@ -49,6 +49,8 @@ namespace WorkTimeManager
                 //nie ma sensu wyświetlać najdłużej przepracowanego dnia skoro generujemy raport tylko z jednego dnia
                 label4.Hide();
                 label6.Hide();
+                mostDayDate.Hide();
+                MostDayTime.Hide();
 
                
         
@@ -61,10 +63,10 @@ namespace WorkTimeManager
                 mostdep.Text = mostWorkedDepartment(null, tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]);
                 overhours.Text = GetUserOverHours(null, tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]);
 
-             //   tmp = GetMostWorkedDay(null, tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]);
+               tmp = GetMostWorkedDay(null, tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]);
 
-                mostDayDate.Text = "0";
-                MostDayTime.Text = "1";
+               mostDayDate.Text = tmp[0];
+               MostDayTime.Text = tmp[1];
                     
            }         
         }
@@ -110,19 +112,17 @@ namespace WorkTimeManager
 
             try
             {
-                string queryText = string.Format("select w.data from worklist w join users u on w.userID = u.ID where day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' and u.name='{3}' and u.surname='{4}' order by sum(w.how_long) limit 1", day, month, year, name, surname);
+               string month_converted = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month.ToString();
+               string queryText = string.Format("select CAST(w.data AS char) as data from worklist w join users u on w.userID = u.ID where  month(w.data)='{0}' and year(w.data)='{1}' and u.name='{2}' and u.surname='{3}' order by sum(w.how_long) limit 1", month_converted, year, name, surname);
 
-                 DataBaseControl.OpenConnection(conn);
+                DataBaseControl.OpenConnection(conn);
 
                 List<string> tmpresult = DataBaseControl.Select(conn, queryText);
                 DateMostWorkedDay = DataBaseControl.ResultToString(tmpresult);
-
                 hoursCount = GetAllWordHours(day, month, year, name, surname);
 
                 result.Add(DateMostWorkedDay);
                 result.Add(hoursCount);
-
-
 
                 return result;
             }
@@ -140,7 +140,7 @@ namespace WorkTimeManager
         }
 
 
-        private string mostWorkedDepartment(string day, string month, string year, string name, string surname)
+        private string mostWorkedDepartment(string day, string month, string year, string name, string surname) //Poprawić źle pobiera nazwe działu firmy
         {
             try
             {
@@ -190,7 +190,6 @@ namespace WorkTimeManager
                 month = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month.ToString();
                 DataBaseControl.OpenConnection(conn);
 
-                MessageBox.Show(month + " " + year);
 
                 if(!string.IsNullOrEmpty(day))
                 {
@@ -221,7 +220,6 @@ namespace WorkTimeManager
             {
                 DataBaseControl.CloseConnection(conn);
             }
-
         }
 
    

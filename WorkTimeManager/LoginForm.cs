@@ -21,9 +21,9 @@ namespace WorkTimeManager
 
         private void Login_Button_Click(object sender, EventArgs e)
         {
-         // user CurrentlyLoggedUser = new user(this.Login_Login.Text, this.Login_Password.Text,this);
+          user CurrentlyLoggedUser = new user(this.Login_Login.Text, this.Login_Password.Text,this);
 
-           user CurrentlyLoggedUser = new user("czajmen", "test", this);
+           //user CurrentlyLoggedUser = new user("czajmen", "test", this);
         }
     }
 }

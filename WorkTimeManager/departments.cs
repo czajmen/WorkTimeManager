@@ -28,7 +28,18 @@ namespace WorkTimeManager
                 this.managersID = new List<string>();
                 this.departmentID = new List<string>();
                 DataBaseControl.OpenConnection(conn);
-                string queryText = string.Format("Select * from departments ");
+
+                string queryText = string.Format("select count(*) from departments");
+
+                ilosc = Convert.ToInt16(DataBaseControl.Select(conn, queryText)[0]);
+
+
+              //  MessageBox.Show(ilosc.ToString());
+
+      
+
+                DataBaseControl.OpenConnection(conn);
+                 queryText = string.Format("Select * from departments ");
                 DataTable userDetails = new DataTable();
                 userDetails = DataBaseControl.SelecTest(conn, queryText);
 
@@ -36,7 +47,8 @@ namespace WorkTimeManager
                 {
                     this.name.Add(row[1].ToString());
                     this.departmentID.Add(row[0].ToString());
-                    this.managersID.Add(row[2].ToString());                            
+                    this.managersID.Add(row[2].ToString());
+
                 }
 
             }

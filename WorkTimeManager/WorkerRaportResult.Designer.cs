@@ -43,6 +43,7 @@
             this.mostDayDate = new System.Windows.Forms.Label();
             this.overhours = new System.Windows.Forms.Label();
             this.MostDayTime = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,7 +122,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(502, 91);
+            this.label6.Location = new System.Drawing.Point(613, 91);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 12;
@@ -139,7 +140,7 @@
             // TotalWork
             // 
             this.TotalWork.AutoSize = true;
-            this.TotalWork.Location = new System.Drawing.Point(205, 91);
+            this.TotalWork.Location = new System.Drawing.Point(194, 91);
             this.TotalWork.Name = "TotalWork";
             this.TotalWork.Size = new System.Drawing.Size(35, 13);
             this.TotalWork.TabIndex = 14;
@@ -179,10 +180,20 @@
             this.MostDayTime.Size = new System.Drawing.Size(0, 13);
             this.MostDayTime.TabIndex = 18;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(249, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "godzin";
+            // 
             // DayWorkerRaportResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.MostDayTime);
             this.Controls.Add(this.overhours);
             this.Controls.Add(this.mostDayDate);
@@ -223,5 +234,6 @@
         private System.Windows.Forms.Label mostDayDate;
         private System.Windows.Forms.Label overhours;
         private System.Windows.Forms.Label MostDayTime;
+        private System.Windows.Forms.Label label2;
     }
 }

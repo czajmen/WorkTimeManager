@@ -24,7 +24,7 @@ namespace WorkTimeManager
             Role_modify.Items.Add("Kierownik");
             Role_modify.SelectedIndex = 0;
 
-            for (int i = 0; i <= departments.ilosc + 1; i++)
+           for (int i = 0; i < departments.ilosc; i++)
             {
                 string[] tmp = departments[i];
                 Department_modify.Items.Add(tmp[1]);
