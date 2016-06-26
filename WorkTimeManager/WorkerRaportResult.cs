@@ -57,13 +57,18 @@ namespace WorkTimeManager
             }
             else if (which==1)  //Miesięczny 
             {
-                dataGridView1.DataSource = GetDataGrid(tmpworker[0], tmpworker[1], tmpdate[2], tmpdate[1], null);
-                data.Text = tmpdate[1] +" "+ tmpdate[2];
-                TotalWork.Text = GetAllWordHours(null, tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]);
-                mostdep.Text = mostWorkedDepartment(null, tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]);
-                overhours.Text = GetUserOverHours(null, tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]);
+                label4.Show();
+                label6.Show();
+                mostDayDate.Show();
+                MostDayTime.Show();
 
-               tmp = GetMostWorkedDay(null, tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]);
+                dataGridView1.DataSource = GetDataGrid(tmpworker[0], tmpworker[1], tmpdate[1], tmpdate[0], null);
+                data.Text = tmpdate[0] +" "+ tmpdate[1];
+                TotalWork.Text = GetAllWordHours(null, tmpdate[0], tmpdate[1], tmpworker[0], tmpworker[1]);
+                mostdep.Text = mostWorkedDepartment(null, tmpdate[0], tmpdate[1], tmpworker[0], tmpworker[1]);
+                overhours.Text = GetUserOverHours(null, tmpdate[0], tmpdate[1], tmpworker[0], tmpworker[1]);
+
+                tmp = GetMostWorkedDay(null, tmpdate[0], tmpdate[1], tmpworker[0], tmpworker[1]);
 
                mostDayDate.Text = tmp[0];
                MostDayTime.Text = tmp[1];
@@ -78,10 +83,10 @@ namespace WorkTimeManager
             try
             {         
                 string result;
-
-                    month = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month.ToString();         
+    
                     double worktime = Convert.ToInt16(TotalWork.Text);
-                    worktime = (worktime/60) - 8;
+                    worktime = (worktime) - 8;
+
 
                     if (worktime > 0)
                     {
@@ -120,6 +125,12 @@ namespace WorkTimeManager
                 List<string> tmpresult = DataBaseControl.Select(conn, queryText);
                 DateMostWorkedDay = DataBaseControl.ResultToString(tmpresult);
                 hoursCount = GetAllWordHours(day, month, year, name, surname);
+
+
+                if (string.IsNullOrEmpty(DateMostWorkedDay) || string.IsNullOrWhiteSpace(DateMostWorkedDay))
+                {
+                    DateMostWorkedDay = "Brak Danych";
+                }
 
                 result.Add(DateMostWorkedDay);
                 result.Add(hoursCount);
@@ -186,6 +197,7 @@ namespace WorkTimeManager
 
             try
             {
+                int tmpresult;
                 string queryText;
                 month = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month.ToString();
                 DataBaseControl.OpenConnection(conn);
@@ -203,9 +215,15 @@ namespace WorkTimeManager
                 List <string> time = new List<string>();
                 time= DataBaseControl.Select(conn,queryText);
 
+
                 if (string.IsNullOrEmpty(time[0]) || string.IsNullOrWhiteSpace(time[0]))
                 {
                     time[0] = "0";
+                }
+                else
+                {
+                    tmpresult = Convert.ToInt16(time[0]) / 60;
+                    time[0] = tmpresult.ToString();
                 }
 
                 return time[0];

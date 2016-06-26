@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace WorkTimeManager
 {
@@ -168,8 +169,16 @@ namespace WorkTimeManager
         public string CryptPassword(string newpassword)
         {
 
+            var message = Encoding.ASCII.GetBytes(newpassword);
+            SHA256Managed hashString = new SHA256Managed();
+            string hex = "";
 
-            return newpassword;
+            var hashValue = hashString.ComputeHash(message);
+            foreach (byte x in hashValue)
+            {
+                hex += String.Format("{0:x2}", x);
+            }
+            return hex;
         }
 
         private List<string> getNameByID(string id)
@@ -248,6 +257,41 @@ namespace WorkTimeManager
             {
                 DataBaseControl.CloseConnection(conn);
             }
+        }
+
+        public bool DeleteUser(string name, string surname)
+        {
+
+            try
+            {
+                DataBaseControl.OpenConnection(conn);
+
+                string queryText;
+
+                queryText = string.Format("select ID from users where name='{0}' and surname ='{1}'", name, surname);
+                string ID = DataBaseControl.Select(conn, queryText)[0];
+
+                queryText = string.Format("delete from users where name='{0}' and surname ='{1}'",name,surname);
+                DataBaseControl.delete(conn, queryText);
+
+                queryText = string.Format("delete from worklist where userID='{0}' ",ID);
+                DataBaseControl.delete(conn, queryText);
+
+                return true;
+            }
+            catch (MySqlException myexc)
+            {
+                MessageBox.Show(myexc.Message);
+                DataBaseControl.CloseConnection(conn);
+                return false;
+            }
+            finally
+            {
+                DataBaseControl.CloseConnection(conn);
+            }
+
+
+    
         }
 
 

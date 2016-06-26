@@ -89,6 +89,12 @@ namespace WorkTimeManager
                  
         }
 
+        public static void delete(MySqlConnection conn, string query)
+        {
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.ExecuteNonQuery();
+        }
+
         public static void insertData(MySqlConnection conn, string query)
         {
             /*MySqlCommand comm = conn.CreateCommand();
