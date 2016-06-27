@@ -34,13 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TextBoxMinutes = new System.Windows.Forms.TextBox();
             this.LabelMinutes = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Departments_Box = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Insert
             // 
-            this.Insert.Location = new System.Drawing.Point(1441, 825);
+            this.Insert.Location = new System.Drawing.Point(1169, 418);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(221, 115);
             this.Insert.TabIndex = 0;
@@ -50,7 +51,7 @@
             // 
             // Topic
             // 
-            this.Topic.Location = new System.Drawing.Point(872, 330);
+            this.Topic.Location = new System.Drawing.Point(572, 316);
             this.Topic.Name = "Topic";
             this.Topic.Size = new System.Drawing.Size(550, 31);
             this.Topic.TabIndex = 1;
@@ -67,7 +68,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(1088, 282);
+            this.label1.Location = new System.Drawing.Point(576, 262);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 31);
             this.label1.TabIndex = 3;
@@ -76,7 +77,7 @@
             // 
             // TextBoxMinutes
             // 
-            this.TextBoxMinutes.Location = new System.Drawing.Point(1498, 330);
+            this.TextBoxMinutes.Location = new System.Drawing.Point(1169, 316);
             this.TextBoxMinutes.Name = "TextBoxMinutes";
             this.TextBoxMinutes.Size = new System.Drawing.Size(100, 31);
             this.TextBoxMinutes.TabIndex = 4;
@@ -87,36 +88,40 @@
             // 
             this.LabelMinutes.AutoSize = true;
             this.LabelMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelMinutes.Location = new System.Drawing.Point(1498, 285);
+            this.LabelMinutes.Location = new System.Drawing.Point(1172, 265);
             this.LabelMinutes.Name = "LabelMinutes";
             this.LabelMinutes.Size = new System.Drawing.Size(97, 29);
             this.LabelMinutes.TabIndex = 5;
             this.LabelMinutes.Text = "Minules";
             // 
-            // button1
+            // Departments_Box
             // 
-            this.button1.Location = new System.Drawing.Point(34, 825);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 115);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Departments_Box.FormattingEnabled = true;
+            this.Departments_Box.Location = new System.Drawing.Point(597, 46);
+            this.Departments_Box.Name = "Departments_Box";
+            this.Departments_Box.Size = new System.Drawing.Size(219, 33);
+            this.Departments_Box.TabIndex = 7;
+            this.Departments_Box.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox1
+            // dataGridView1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(597, 328);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(219, 33);
-            this.comboBox1.TabIndex = 7;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 418);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(1132, 384);
+            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // WorkTimeRaport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1674, 1119);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1414, 863);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Departments_Box);
             this.Controls.Add(this.LabelMinutes);
             this.Controls.Add(this.TextBoxMinutes);
             this.Controls.Add(this.label1);
@@ -127,6 +132,7 @@
             this.Name = "WorkTimeRaport";
             this.Text = "WorkTimeRaport";
             this.Load += new System.EventHandler(this.WorkTimeRaport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,8 +146,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TextBoxMinutes;
         private System.Windows.Forms.Label LabelMinutes;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Departments_Box;
+        private System.Windows.Forms.DataGridView dataGridView1;
 
     }
 }

@@ -81,5 +81,10 @@ namespace WorkTimeManager
         {
 
         }
+
+        private void WorkerRaport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

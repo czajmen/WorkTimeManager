@@ -19,11 +19,51 @@ namespace WorkTimeManager
     {
         public MySqlConnection conn = DataBaseControl.CreateConnection("time_manager");  
         private  user _test;
+        private departments departments = new departments();
 
         public WorkTimeRaport(user test)
         {
             _test = test;
+            
             InitializeComponent();
+           
+
+            for (int i = 0; i < departments.ilosc;i++ )
+            {
+                string[] tmp = departments[i];
+                Departments_Box.Items.Add(tmp[1]);
+            }
+
+           Departments_Box.SelectedIndex = 0;
+
+           try
+           {
+               string queryText;
+               string day;
+               string month;
+               string years;
+               string fulldata;
+               day = monthCalendar.SelectionStart.Day.ToString();
+               month = "0"+monthCalendar.SelectionStart.Month.ToString();
+               years = monthCalendar.SelectionStart.Year.ToString();
+               fulldata = years + month + day;
+
+
+
+             //  queryText = string.Format("SELECT CAST(w.data AS char) as data, w.title, how_long, ID FROM time_manager.worklist w");
+               queryText = string.Format("select CAST(w.data AS char) as data,ID, title,how_long from worklist w where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' ", day, month, years);
+
+               DataTable Data = new DataTable();
+               Data = DataBaseControl.SelecTest(conn, queryText);
+               dataGridView1.DataSource = Data;
+
+           }
+           finally
+           {
+               DataBaseControl.CloseConnection(conn);
+           }
+
+
         }
 
 
@@ -35,7 +75,15 @@ namespace WorkTimeManager
             
             string title;
             string minutes;
-
+            string department;
+            string day;
+            string month;
+            string years;
+            string fulldata;
+            day = monthCalendar.SelectionStart.Day.ToString();
+            month = "0" + monthCalendar.SelectionStart.Month.ToString();
+            years = monthCalendar.SelectionStart.Year.ToString();
+            fulldata = years + month + day;
             title = Topic.Text.ToString();
             minutes= TextBoxMinutes.Text.ToString();
           // // MessageBox.Show(minutes);
@@ -46,13 +94,18 @@ namespace WorkTimeManager
             //insert= "insert into worklist values(null,1,"+title+","+rok+",2,34)";
         //   insert= "insert into worklist values(null,1,temat,"+rok+",2,"+minutes+")";
           //  raport test22 = new raport(insert);
-           
+          department = (this.Departments_Box.SelectedIndex + 1).ToString();
 
            try
            {
                DataBaseControl.OpenConnection(conn);
-               string queryText = string.Format("insert into worklist values(null,1,'{0}',{1},2,{2})",title,rok,minutes);
-               DataBaseControl.insertData(conn, queryText);  
+               string queryText = string.Format("insert into worklist values(null,{0},'{1}',{2},{3},{4})",_test.userID,title,rok,department,minutes);
+               DataBaseControl.insertData(conn, queryText);
+               queryText = string.Format("select CAST(w.data AS char) as data,w.ID, title,how_long,d.name from worklist w join departments d on w.departamentID=d.ID where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' ", day, month, years);
+
+               DataTable Data = new DataTable();
+               Data = DataBaseControl.SelecTest(conn, queryText);
+               dataGridView1.DataSource = Data;
            }
            catch (MySqlException myexc)
            {
@@ -103,8 +156,23 @@ namespace WorkTimeManager
             if(!Char.IsDigit(ch)&& ch!=8)
             {
                 e.Handled = true;
-                MessageBox.Show("Please enter valid value");
+                MessageBox.Show("Wpisz tylko liczbę");
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

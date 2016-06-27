@@ -45,7 +45,7 @@
             // 
             this.dateTimePicker1.Checked = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(208, 598);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateTimePicker1.Size = new System.Drawing.Size(288, 31);
@@ -55,7 +55,7 @@
             // searchuser_workerraport
             // 
             this.searchuser_workerraport.Location = new System.Drawing.Point(160, 65);
-            this.searchuser_workerraport.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.searchuser_workerraport.Margin = new System.Windows.Forms.Padding(6);
             this.searchuser_workerraport.Name = "searchuser_workerraport";
             this.searchuser_workerraport.Size = new System.Drawing.Size(336, 31);
             this.searchuser_workerraport.TabIndex = 1;
@@ -76,7 +76,7 @@
             this.SearchedUsers.FormattingEnabled = true;
             this.SearchedUsers.ItemHeight = 25;
             this.SearchedUsers.Location = new System.Drawing.Point(160, 115);
-            this.SearchedUsers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.SearchedUsers.Margin = new System.Windows.Forms.Padding(6);
             this.SearchedUsers.Name = "SearchedUsers";
             this.SearchedUsers.Size = new System.Drawing.Size(336, 429);
             this.SearchedUsers.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             this.dateTimePicker2.Checked = false;
             this.dateTimePicker2.Location = new System.Drawing.Point(208, 667);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(6);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateTimePicker2.Size = new System.Drawing.Size(288, 31);
@@ -97,7 +97,7 @@
             // 
             this.Draport.AutoSize = true;
             this.Draport.Location = new System.Drawing.Point(168, 667);
-            this.Draport.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Draport.Margin = new System.Windows.Forms.Padding(6);
             this.Draport.Name = "Draport";
             this.Draport.Size = new System.Drawing.Size(27, 26);
             this.Draport.TabIndex = 7;
@@ -108,7 +108,7 @@
             // 
             this.Mraport.AutoSize = true;
             this.Mraport.Location = new System.Drawing.Point(168, 598);
-            this.Mraport.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Mraport.Margin = new System.Windows.Forms.Padding(6);
             this.Mraport.Name = "Mraport";
             this.Mraport.Size = new System.Drawing.Size(27, 26);
             this.Mraport.TabIndex = 8;
@@ -138,7 +138,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(350, 762);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 44);
             this.button1.TabIndex = 11;
@@ -149,7 +149,7 @@
             // dayWorkerRaportResult1
             // 
             this.dayWorkerRaportResult1.Location = new System.Drawing.Point(554, 31);
-            this.dayWorkerRaportResult1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.dayWorkerRaportResult1.Margin = new System.Windows.Forms.Padding(12);
             this.dayWorkerRaportResult1.Name = "dayWorkerRaportResult1";
             this.dayWorkerRaportResult1.Size = new System.Drawing.Size(1326, 888);
             this.dayWorkerRaportResult1.TabIndex = 12;
@@ -170,9 +170,10 @@
             this.Controls.Add(this.Wyszukaj);
             this.Controls.Add(this.searchuser_workerraport);
             this.Controls.Add(this.dateTimePicker1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "WorkerRaport";
             this.Size = new System.Drawing.Size(1950, 1035);
+            this.Load += new System.EventHandler(this.WorkerRaport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
