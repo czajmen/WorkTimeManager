@@ -99,7 +99,7 @@ namespace WorkTimeManager
                     tmp = 1;
                 int tmp2 = Department_modify.SelectedIndex + 1;   //Ustalam ID działu firmy
 
-                if (registerHandler.changeUser(ID.Text, Login_modify.Text, Password_modify.Text, Name_modify.Text, Surname_modify.Text, tmp2.ToString(), tmp.ToString()))
+                if (registerHandler.changeUser(ID.Text.Replace(" ", string.Empty), Login_modify.Text.Replace(" ", string.Empty), Password_modify.Text.Replace(" ", string.Empty), Name_modify.Text.Replace(" ", string.Empty), Surname_modify.Text.Replace(" ", string.Empty), tmp2.ToString().Replace(" ", string.Empty), tmp.ToString().Replace(" ", string.Empty)))
                 {
                     Clear_register_Click(this, e);
                     errorProvider1.Clear();

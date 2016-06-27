@@ -167,7 +167,7 @@ namespace WorkTimeManager
                                   "begin", "cast", "create", "cursor", "declare", "select", 
                                   "drop", "end", "exec", "execute", "fetch", "delete", 
                                   "kill", "open", "sys", "sysobjects", "syscolumns", 
-                                   "table", "update"};
+                                   "table"};
 
             foreach (var item in blackList)
             {
