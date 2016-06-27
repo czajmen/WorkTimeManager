@@ -92,10 +92,7 @@ namespace WorkTimeManager
             { 
                 result.Add(dr[0].ToString());
 
-                foreach (var item in dr)
-                {
-                    MessageBox.Show(item.ToString());
-                }
+              
                
             }
             dr.Close();

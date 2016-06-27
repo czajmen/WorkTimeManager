@@ -36,7 +36,12 @@ namespace WorkTimeManager
                 string year = dateTimePicker1.Text.ToString();
 
                 dataGridView1.DataSource = raport.getWorkersGrid(null, year);
-                dataGridView2.DataSource = raport.getDepartmensGrid(null, year);   
+                dataGridView2.DataSource = raport.getDepartmensGrid(null, year);
+                workTimeSum.Text = raport.GetWorkTimeSum(null, year);
+                TheMostActiveDepartment.Text = raport.getMostActiveDepartment(null, year);
+                TheMostActiveDepartmentTime.Text = raport.getMostActiveDepartmentWorkTime(null, year);
+                Themostactiveworker.Text = raport.getMostActivWorker(null, year);
+                Themostactiveworkertime.Text = raport.GetMostAAciveWorkerWorkTimeSum(null, year);
 
             }
             else if (Draport.Checked)  //Raport miesięczny
@@ -45,6 +50,11 @@ namespace WorkTimeManager
 
                 dataGridView1.DataSource = raport.getWorkersGrid(date[0], date[1]);
                 dataGridView2.DataSource = raport.getDepartmensGrid(date[0], date[1]);
+                workTimeSum.Text = raport.GetWorkTimeSum(date[0], date[1]);
+                TheMostActiveDepartment.Text = raport.getMostActiveDepartment(date[0], date[1]);
+                TheMostActiveDepartmentTime.Text = raport.getMostActiveDepartmentWorkTime(date[0], date[1]);
+                Themostactiveworker.Text = raport.getMostActivWorker(date[0], date[1]);
+                Themostactiveworkertime.Text = raport.GetMostAAciveWorkerWorkTimeSum(date[0], date[1]);
                 
             }
             else

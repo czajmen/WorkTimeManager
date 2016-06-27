@@ -48,6 +48,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TheMostActiveDepartment = new System.Windows.Forms.Label();
             this.TheMostActiveDepartmentTime = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,30 +61,27 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 129);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(6, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 25);
+            this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 16;
             this.label2.Text = "Miesięczny";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 62);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(20, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 25);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 15;
             this.label1.Text = "Roczny";
             // 
             // Mraport
             // 
             this.Mraport.AutoSize = true;
-            this.Mraport.Location = new System.Drawing.Point(142, 48);
-            this.Mraport.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Mraport.Location = new System.Drawing.Point(71, 25);
             this.Mraport.Name = "Mraport";
-            this.Mraport.Size = new System.Drawing.Size(27, 26);
+            this.Mraport.Size = new System.Drawing.Size(14, 13);
             this.Mraport.TabIndex = 14;
             this.Mraport.TabStop = true;
             this.Mraport.UseVisualStyleBackColor = true;
@@ -89,10 +89,9 @@
             // Draport
             // 
             this.Draport.AutoSize = true;
-            this.Draport.Location = new System.Drawing.Point(142, 117);
-            this.Draport.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Draport.Location = new System.Drawing.Point(71, 61);
             this.Draport.Name = "Draport";
-            this.Draport.Size = new System.Drawing.Size(27, 26);
+            this.Draport.Size = new System.Drawing.Size(14, 13);
             this.Draport.TabIndex = 13;
             this.Draport.TabStop = true;
             this.Draport.UseVisualStyleBackColor = true;
@@ -100,31 +99,28 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Checked = false;
-            this.dateTimePicker2.Location = new System.Drawing.Point(182, 117);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateTimePicker2.Location = new System.Drawing.Point(91, 61);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateTimePicker2.Size = new System.Drawing.Size(288, 31);
+            this.dateTimePicker2.Size = new System.Drawing.Size(146, 20);
             this.dateTimePicker2.TabIndex = 12;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(182, 48);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dateTimePicker1.Location = new System.Drawing.Point(91, 20);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateTimePicker1.Size = new System.Drawing.Size(288, 31);
+            this.dateTimePicker1.Size = new System.Drawing.Size(146, 20);
             this.dateTimePicker1.TabIndex = 11;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(324, 192);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Location = new System.Drawing.Point(162, 100);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 44);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
             this.button1.Text = "Generuj";
             this.button1.UseVisualStyleBackColor = true;
@@ -134,21 +130,19 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(182, 562);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl1.Location = new System.Drawing.Point(91, 292);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1278, 406);
+            this.tabControl1.Size = new System.Drawing.Size(639, 211);
             this.tabControl1.TabIndex = 18;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(8, 39);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage1.Size = new System.Drawing.Size(1262, 359);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(631, 185);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -157,20 +151,18 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1262, 356);
+            this.dataGridView1.Size = new System.Drawing.Size(631, 185);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(8, 39);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.tabPage2.Size = new System.Drawing.Size(1262, 359);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(631, 185);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -179,15 +171,15 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1270, 369);
+            this.dataGridView2.Size = new System.Drawing.Size(635, 192);
             this.dataGridView2.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(299, 32);
+            this.label3.Location = new System.Drawing.Point(352, 98);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 13);
             this.label3.TabIndex = 19;
@@ -196,7 +188,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(333, 90);
+            this.label4.Location = new System.Drawing.Point(470, 166);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 20;
@@ -205,34 +198,35 @@
             // Themostactiveworker
             // 
             this.Themostactiveworker.AutoSize = true;
-            this.Themostactiveworker.Location = new System.Drawing.Point(452, 31);
+            this.Themostactiveworker.Location = new System.Drawing.Point(498, 98);
+            this.Themostactiveworker.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Themostactiveworker.Name = "Themostactiveworker";
-            this.Themostactiveworker.Size = new System.Drawing.Size(35, 13);
+            this.Themostactiveworker.Size = new System.Drawing.Size(0, 13);
             this.Themostactiveworker.TabIndex = 21;
-            this.Themostactiveworker.Text = "label5";
             // 
             // workTimeSum
             // 
             this.workTimeSum.AutoSize = true;
-            this.workTimeSum.Location = new System.Drawing.Point(452, 90);
+            this.workTimeSum.Location = new System.Drawing.Point(586, 166);
+            this.workTimeSum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.workTimeSum.Name = "workTimeSum";
-            this.workTimeSum.Size = new System.Drawing.Size(35, 13);
+            this.workTimeSum.Size = new System.Drawing.Size(0, 13);
             this.workTimeSum.TabIndex = 22;
-            this.workTimeSum.Text = "label5";
             // 
             // Themostactiveworkertime
             // 
             this.Themostactiveworkertime.AutoSize = true;
-            this.Themostactiveworkertime.Location = new System.Drawing.Point(518, 32);
+            this.Themostactiveworkertime.Location = new System.Drawing.Point(586, 98);
+            this.Themostactiveworkertime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Themostactiveworkertime.Name = "Themostactiveworkertime";
-            this.Themostactiveworkertime.Size = new System.Drawing.Size(35, 13);
+            this.Themostactiveworkertime.Size = new System.Drawing.Size(0, 13);
             this.Themostactiveworkertime.TabIndex = 23;
-            this.Themostactiveworkertime.Text = "label5";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(325, 61);
+            this.label5.Location = new System.Drawing.Point(352, 133);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 13);
             this.label5.TabIndex = 24;
@@ -241,25 +235,58 @@
             // TheMostActiveDepartment
             // 
             this.TheMostActiveDepartment.AutoSize = true;
-            this.TheMostActiveDepartment.Location = new System.Drawing.Point(452, 61);
+            this.TheMostActiveDepartment.Location = new System.Drawing.Point(498, 134);
+            this.TheMostActiveDepartment.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TheMostActiveDepartment.Name = "TheMostActiveDepartment";
-            this.TheMostActiveDepartment.Size = new System.Drawing.Size(35, 13);
+            this.TheMostActiveDepartment.Size = new System.Drawing.Size(0, 13);
             this.TheMostActiveDepartment.TabIndex = 25;
-            this.TheMostActiveDepartment.Text = "label5";
             // 
             // TheMostActiveDepartmentTime
             // 
             this.TheMostActiveDepartmentTime.AutoSize = true;
-            this.TheMostActiveDepartmentTime.Location = new System.Drawing.Point(518, 61);
+            this.TheMostActiveDepartmentTime.Location = new System.Drawing.Point(586, 133);
+            this.TheMostActiveDepartmentTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TheMostActiveDepartmentTime.Name = "TheMostActiveDepartmentTime";
-            this.TheMostActiveDepartmentTime.Size = new System.Drawing.Size(35, 13);
+            this.TheMostActiveDepartmentTime.Size = new System.Drawing.Size(0, 13);
             this.TheMostActiveDepartmentTime.TabIndex = 26;
-            this.TheMostActiveDepartmentTime.Text = "label6";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(657, 98);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Godzin";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(657, 133);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Godzin";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(657, 166);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Godzin";
             // 
             // CompanyReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.TheMostActiveDepartmentTime);
             this.Controls.Add(this.TheMostActiveDepartment);
             this.Controls.Add(this.label5);
@@ -276,9 +303,8 @@
             this.Controls.Add(this.Draport);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "CompanyReport";
-            this.Size = new System.Drawing.Size(1658, 998);
+            this.Size = new System.Drawing.Size(829, 519);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -311,5 +337,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label TheMostActiveDepartment;
         private System.Windows.Forms.Label TheMostActiveDepartmentTime;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
