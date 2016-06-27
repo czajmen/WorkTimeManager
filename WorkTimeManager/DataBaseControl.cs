@@ -70,16 +70,18 @@ namespace WorkTimeManager
                                   "drop", "end", "exec", "execute", "fetch", "insert", 
                                   "kill", "open", "sys", "sysobjects", "syscolumns", 
                                    "table", "update"};
-         
+
             foreach (var item in blackList)
             {
-                if(query.Contains(item))
+                if (query.Contains(item))
                 {
                     result.Add("null");
                     MessageBox.Show("Proszę nie psuć :( ");
-                    return result;                 
+                    return result;
                 }
             }
+
+   
 
 
             MySqlCommand command = new MySqlCommand(query, conn);

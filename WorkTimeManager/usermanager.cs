@@ -188,6 +188,19 @@ namespace WorkTimeManager
             }
             return hex;
         }
+        public static string ResultToString(List<string> result)
+        {
+            string tmp = "";
+
+            foreach (var item in result)
+            {
+                tmp += item;
+                tmp += " ";
+            }
+
+            return tmp;
+        }
+
 
         private List<string> getNameByID(string id)
         {
@@ -196,9 +209,14 @@ namespace WorkTimeManager
                 DataBaseControl.OpenConnection(conn);
 
                 List<string> NameSurname = new List<string>();
+                string tmp;
+                string queryText = string.Format("Select name from users where ID='{0}'", id);
 
-                string queryText = string.Format("Select name,surname from users where ID='{0}'", id);
-                 NameSurname=DataBaseControl.Select(conn,queryText);
+                 tmp=ResultToString( DataBaseControl.Select(conn,queryText));
+                 NameSurname.Add(tmp);
+                 queryText = string.Format("Select surname from users where ID='{0}'", id);
+                 tmp = ResultToString(DataBaseControl.Select(conn, queryText));
+                 NameSurname.Add(tmp);
 
                  return NameSurname;
             }
