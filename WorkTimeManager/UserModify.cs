@@ -85,7 +85,7 @@ namespace WorkTimeManager
                 {
                     if (string.IsNullOrEmpty(x.Text) || string.IsNullOrWhiteSpace(x.Text))
                     {
-                        if (x.Name != Password_modify.Name)
+                        if (x.Name != Password_modify.Name  && x!=textBox1)
                         {
                             errorProvider1.SetError(x, "To pole nie może zostać puste!");
                             canchange = false;
@@ -120,6 +120,7 @@ namespace WorkTimeManager
                     x.Text = "";
                 }
             }
+            listBox1_modify.Items.Clear();
         }
 
         private void UserModify_Load(object sender, EventArgs e)

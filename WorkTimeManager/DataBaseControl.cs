@@ -110,7 +110,7 @@ namespace WorkTimeManager
 
 
                   string[] blackList = {"--", ";--", ";", "/*", "*/", "@@",
-                                  "@", "char", "nchar", "varchar", "nvarchar", "alter", 
+                                  "@", "nchar", "varchar", "nvarchar", "alter", 
                                   "begin", "cast", "create", "cursor", "declare", "delete", 
                                   "drop", "end", "exec", "execute", "fetch", "insert", 
                                   "kill", "open", "sys", "sysobjects", "syscolumns", 
