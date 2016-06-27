@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace WorkTimeManager
 {
     class usermanager
     {
-        public MySqlConnection conn = DataBaseControl.CreateConnection("time_manager");   
+        private MySqlConnection conn = DataBaseControl.CreateConnection("time_manager");   
 
         private bool testLogin(string login)
         {
@@ -38,6 +39,10 @@ namespace WorkTimeManager
                 DataBaseControl.CloseConnection(conn);
                 return false;
 
+            }
+             catch //Gdy jest próba sql injection po zabezpieczniu wyrzuca exception w convert.toint
+            {
+                return false;
             }
             finally
             {
@@ -70,6 +75,10 @@ namespace WorkTimeManager
             {
                 DataBaseControl.CloseConnection(conn);
                 MessageBox.Show(myexc.Message);
+                return false;
+            }
+            catch //Gdy jest próba sql injection po zabezpieczniu wyrzuca exception w convert.toint
+            {
                 return false;
             }
             finally
@@ -165,12 +174,33 @@ namespace WorkTimeManager
             }
         }
 
-        public string CryptPassword(string newpassword)
+        private string CryptPassword(string newpassword)
         {
 
+            var message = Encoding.ASCII.GetBytes(newpassword);
+            SHA256Managed hashString = new SHA256Managed();
+            string hex = "";
 
-            return newpassword;
+            var hashValue = hashString.ComputeHash(message);
+            foreach (byte x in hashValue)
+            {
+                hex += String.Format("{0:x2}", x);
+            }
+            return hex;
         }
+        public static string ResultToString(List<string> result)
+        {
+            string tmp = "";
+
+            foreach (var item in result)
+            {
+                tmp += item;
+                tmp += " ";
+            }
+
+            return tmp;
+        }
+
 
         private List<string> getNameByID(string id)
         {
@@ -179,9 +209,14 @@ namespace WorkTimeManager
                 DataBaseControl.OpenConnection(conn);
 
                 List<string> NameSurname = new List<string>();
+                string tmp;
+                string queryText = string.Format("Select name from users where ID='{0}'", id);
 
-                string queryText = string.Format("Select name,surname from users where ID='{0}'", id);
-                 NameSurname=DataBaseControl.Select(conn,queryText);
+                 tmp=ResultToString( DataBaseControl.Select(conn,queryText));
+                 NameSurname.Add(tmp);
+                 queryText = string.Format("Select surname from users where ID='{0}'", id);
+                 tmp = ResultToString(DataBaseControl.Select(conn, queryText));
+                 NameSurname.Add(tmp);
 
                  return NameSurname;
             }
@@ -248,6 +283,41 @@ namespace WorkTimeManager
             {
                 DataBaseControl.CloseConnection(conn);
             }
+        }
+
+        public bool DeleteUser(string name, string surname)
+        {
+
+            try
+            {
+                DataBaseControl.OpenConnection(conn);
+
+                string queryText;
+
+                queryText = string.Format("select ID from users where name='{0}' and surname ='{1}'", name, surname);
+                string ID = DataBaseControl.Select(conn, queryText)[0];
+
+                queryText = string.Format("delete from users where name='{0}' and surname ='{1}'",name,surname);
+                DataBaseControl.delete(conn, queryText);
+
+                queryText = string.Format("delete from worklist where userID='{0}' ",ID);
+                DataBaseControl.delete(conn, queryText);
+
+                return true;
+            }
+            catch (MySqlException myexc)
+            {
+                MessageBox.Show(myexc.Message);
+                DataBaseControl.CloseConnection(conn);
+                return false;
+            }
+            finally
+            {
+                DataBaseControl.CloseConnection(conn);
+            }
+
+
+    
         }
 
 

@@ -17,6 +17,8 @@ namespace WorkTimeManager
         public static string User { get; set; }
         public static string Passwd { private get; set; }
 
+        
+
 
         public static uint Port { get; set; }
         static DataBaseControl() //Dane do bazy danych bez tego nawet nie odpalisz 
@@ -26,6 +28,7 @@ namespace WorkTimeManager
             Passwd = "";
             Port = 3306;
 
+      
         }
 
         public static MySqlConnection CreateConnection(string DataBaseName)
@@ -60,6 +63,27 @@ namespace WorkTimeManager
         public static List<string> Select(MySqlConnection conn,string query)
         {
             List<string> result = new List<string>();
+
+            string[] blackList = {"--", ";--", ";", "/*", "*/", "@@",
+                                  "@", "nchar", "varchar", "nvarchar", "alter", 
+                                  "begin", "cast", "create", "cursor", "declare", "delete", 
+                                  "drop", "end", "exec", "execute", "fetch", "insert", 
+                                  "kill", "open", "sys", "sysobjects", "syscolumns", 
+                                   "table", "update"};
+
+            foreach (var item in blackList)
+            {
+                if (query.Contains(item))
+                {
+                    result.Add("null");
+                    MessageBox.Show("Proszę nie psuć :( ");
+                    return result;
+                }
+            }
+
+   
+
+
             MySqlCommand command = new MySqlCommand(query, conn);
             MySqlDataReader dr = command.ExecuteReader();
    
@@ -82,11 +106,55 @@ namespace WorkTimeManager
         public static DataTable SelecTest(MySqlConnection conn, string query)
         {        
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
-                dataAdapter.SelectCommand = new MySqlCommand(query, conn);
                 DataTable table = new DataTable();
+
+
+                  string[] blackList = {"--", ";--", ";", "/*", "*/", "@@",
+                                  "@", "char", "nchar", "varchar", "nvarchar", "alter", 
+                                  "begin", "cast", "create", "cursor", "declare", "delete", 
+                                  "drop", "end", "exec", "execute", "fetch", "insert", 
+                                  "kill", "open", "sys", "sysobjects", "syscolumns", 
+                                   "table", "update"};
+
+                foreach (var item in blackList)
+                {
+                    if (query.Contains(item))
+                    {
+                       
+                        MessageBox.Show("Proszę nie psuć :( ");
+                        return table;
+                    }
+                }
+
+                dataAdapter.SelectCommand = new MySqlCommand(query, conn);
+               
                 dataAdapter.Fill(table);
                 return table;
                  
+        }
+
+        public static void delete(MySqlConnection conn, string query)
+        {
+            string[] blackList = {"--", ";--", ";", "/*", "*/", "@@",
+                                  "@", "char", "nchar", "varchar", "nvarchar", "alter", 
+                                  "begin", "cast", "create", "cursor", "declare", "select", 
+                                  "drop", "end", "exec", "execute", "fetch", "insert", 
+                                  "kill", "open", "sys", "sysobjects", "syscolumns", 
+                                   "table", "update"};
+
+            foreach (var item in blackList)
+            {
+                if (query.Contains(item))
+                {
+                    MessageBox.Show("Proszę nie psuć :( ");
+                    return;
+                }
+            }
+
+
+
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.ExecuteNonQuery();
         }
 
         public static void insertData(MySqlConnection conn, string query)
@@ -96,7 +164,21 @@ namespace WorkTimeManager
       
             comm.ExecuteNonQuery();
             MessageBox.Show(query);*/
+            string[] blackList = {"--", ";--", ";", "/*", "*/", "@@",
+                                  "@", "char", "nchar", "varchar", "nvarchar", "alter", 
+                                  "begin", "cast", "create", "cursor", "declare", "select", 
+                                  "drop", "end", "exec", "execute", "fetch", "delete", 
+                                  "kill", "open", "sys", "sysobjects", "syscolumns", 
+                                   "table"};
 
+            foreach (var item in blackList)
+            {
+                if (query.Contains(item))
+                {
+                    MessageBox.Show("Proszę nie psuć :( ");
+                    return;
+                }
+            }
 
 
             MySqlCommand command = new MySqlCommand(query, conn);

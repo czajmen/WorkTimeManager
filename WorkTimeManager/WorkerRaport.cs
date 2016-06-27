@@ -52,7 +52,7 @@ namespace WorkTimeManager
             if(SearchedUsers.SelectedIndex >= 0 && Mraport.Checked)
             {
                 dayWorkerRaportResult1.Visible = true;
-                dayWorkerRaportResult1.generate(SearchedUsers.SelectedItem.ToString(), dateTimePicker2.Text, 1);
+                dayWorkerRaportResult1.generate(SearchedUsers.SelectedItem.ToString(), dateTimePicker1.Text, 1);
 
             }
             else if(SearchedUsers.SelectedIndex >= 0 && Draport.Checked)

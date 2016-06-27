@@ -34,6 +34,8 @@ namespace WorkTimeManager
 
             Role_modify.DropDownStyle = ComboBoxStyle.DropDownList;
             Department_modify.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            Password_modify.PasswordChar = '*';
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -83,7 +85,7 @@ namespace WorkTimeManager
                 {
                     if (string.IsNullOrEmpty(x.Text) || string.IsNullOrWhiteSpace(x.Text))
                     {
-                        if(x.Name!=Password_modify.Name)
+                        if (x.Name != Password_modify.Name)
                         {
                             errorProvider1.SetError(x, "To pole nie może zostać puste!");
                             canchange = false;
@@ -97,7 +99,7 @@ namespace WorkTimeManager
                     tmp = 1;
                 int tmp2 = Department_modify.SelectedIndex + 1;   //Ustalam ID działu firmy
 
-                if (registerHandler.changeUser(ID.Text, Login_modify.Text, Password_modify.Text, Name_modify.Text, Surname_modify.Text, tmp2.ToString(), tmp.ToString()))
+                if (registerHandler.changeUser(ID.Text.Replace(" ", string.Empty), Login_modify.Text.Replace(" ", string.Empty), Password_modify.Text.Replace(" ", string.Empty), Name_modify.Text.Replace(" ", string.Empty), Surname_modify.Text.Replace(" ", string.Empty), tmp2.ToString().Replace(" ", string.Empty), tmp.ToString().Replace(" ", string.Empty)))
                 {
                     Clear_register_Click(this, e);
                     errorProvider1.Clear();
@@ -115,7 +117,7 @@ namespace WorkTimeManager
             {
                 if (x is TextBox)
                 {
-                    x.Text = " ";
+                    x.Text = "";
                 }
             }
         }
@@ -123,6 +125,43 @@ namespace WorkTimeManager
         private void UserModify_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Delete_User_Click(object sender, EventArgs e)
+        {
+
+            bool candelete = true;
+
+            foreach (Control x in this.Controls)
+            {
+                if (string.IsNullOrEmpty(x.Text) || string.IsNullOrWhiteSpace(x.Text))
+                {
+                    if (x.Name != Password_modify.Name)
+                    {
+                        errorProvider1.SetError(x, "To pole nie może zostać puste!");
+                        candelete = false;
+                    }
+                }
+            }
+          
+            if(candelete)
+            {
+
+                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunać: " + Name_modify.Text + " " + Surname_modify.Text+" ?","Kasowanie", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    if (registerHandler.DeleteUser(Name_modify.Text, Surname_modify.Text))
+                    {
+                        MessageBox.Show("Pracownik został usunięty z bazy!");
+                        Clear_register_Click(this, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuwanie nie powiodło się!");
+                    }
+                }
+                     
+            }      
         }
     }
 }

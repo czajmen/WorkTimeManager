@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace WorkTimeManager
 {
@@ -19,7 +20,7 @@ namespace WorkTimeManager
 
         public string login;     // tego nie tykaj xd nie będzie Ci potrzebne
 
-        public MySqlConnection conn;  //Database connection handler
+        private MySqlConnection conn;  //Database connection handler
 
         public user(string login, string password, LoginForm loginForm)  //Konstruktor który loguje użytkownika i odpala Twój albo mój interfejs w zależności czy jest logowany user adminem
         {
@@ -34,8 +35,11 @@ namespace WorkTimeManager
                 DataBaseControl.OpenConnection(conn);
 
                 string queryText = string.Format("Select count(*) from users where login='{0}' and password='{1}'", login, CryptPassword(password));
+
                 List<string> result = DataBaseControl.Select(conn, queryText);
                 stringResult = DataBaseControl.ResultToString(result);
+
+
              
 
             }
@@ -49,11 +53,13 @@ namespace WorkTimeManager
             }     
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-                
-             if (Convert.ToInt16(stringResult) > 0)
-             {
-                 this.login = login;
-                 this.setUserDetail(this.getUserID(this));
+
+            try
+            {
+                if (Convert.ToInt16(stringResult) > 0)
+                {
+                    this.login = login;
+                    this.setUserDetail(this.getUserID(this));
 
                     if (this.isAdmin == true)
                     {
@@ -67,19 +73,34 @@ namespace WorkTimeManager
                         workRapot.Show();
                         loginForm.Hide();
                     }
-             }
-             else
-             {
-                 MessageBox.Show("Nie prawidłowy Login/Hasło");
-            }   
+                }
+                else
+                {
+                    MessageBox.Show("Nie prawidłowy Login/Hasło");
+                }   
+            }
+            catch
+            {
+
+            }
+             
         }
 
 
         private string CryptPassword(string newpassword)
         {
+         var message = Encoding.ASCII.GetBytes(newpassword);
+            SHA256Managed hashString = new SHA256Managed();
+            string hex = "";
 
+            var hashValue = hashString.ComputeHash(message);
+            foreach (byte x in hashValue)
+            {
+                hex += String.Format("{0:x2}", x);
+            }
+            return hex;
 
-            return newpassword;
+         //  return newpassword;
         }
         
         private int getUserID(user user)

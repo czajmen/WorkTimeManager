@@ -21,9 +21,10 @@ namespace WorkTimeManager
         public UserRegister1()
         {
             InitializeComponent();
-         
-            Role_Register.Items.Add("Pracownik");
+
             Role_Register.Items.Add("Kierownik");
+            Role_Register.Items.Add("Pracownik");
+           
             Role_Register.SelectedIndex = 0;
 
            for (int i = 0; i < departments.ilosc;i++ )
@@ -39,6 +40,8 @@ namespace WorkTimeManager
 
             Role_Register.DropDownStyle = ComboBoxStyle.DropDownList;
             Department_Register.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            Password_register.PasswordChar = '*';
         }
 
         private void clear()
@@ -47,7 +50,7 @@ namespace WorkTimeManager
             {
                 if(x is TextBox)
                 {
-                    x.Text = " ";
+                    x.Text = "";
                 }         
             }
         }
@@ -73,7 +76,7 @@ namespace WorkTimeManager
                 if (Department_Register.SelectedIndex != 0)
                     tmp = true;
 
-                registerHandler.registerNewUser(this.Login_register.Text, this.Password_register.Text, this.Name_Register.Text, this.Surname_Register.Text, this.Department_Register.SelectedIndex+1, tmp);
+                registerHandler.registerNewUser(this.Login_register.Text.Replace(" ", string.Empty), this.Password_register.Text.Replace(" ", string.Empty), this.Name_Register.Text.Replace(" ", string.Empty), this.Surname_Register.Text.Replace(" ", string.Empty), this.Department_Register.SelectedIndex + 1, tmp);
              
                 clear();
             }
