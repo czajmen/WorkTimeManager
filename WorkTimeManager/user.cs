@@ -20,7 +20,7 @@ namespace WorkTimeManager
 
         public string login;     // tego nie tykaj xd nie będzie Ci potrzebne
 
-        public MySqlConnection conn;  //Database connection handler
+        private MySqlConnection conn;  //Database connection handler
 
         public user(string login, string password, LoginForm loginForm)  //Konstruktor który loguje użytkownika i odpala Twój albo mój interfejs w zależności czy jest logowany user adminem
         {

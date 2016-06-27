@@ -12,7 +12,7 @@ namespace WorkTimeManager
 {
     class usermanager
     {
-        public MySqlConnection conn = DataBaseControl.CreateConnection("time_manager");   
+        private MySqlConnection conn = DataBaseControl.CreateConnection("time_manager");   
 
         private bool testLogin(string login)
         {
@@ -174,7 +174,7 @@ namespace WorkTimeManager
             }
         }
 
-        public string CryptPassword(string newpassword)
+        private string CryptPassword(string newpassword)
         {
 
             var message = Encoding.ASCII.GetBytes(newpassword);

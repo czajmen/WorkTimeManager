@@ -242,7 +242,7 @@ namespace WorkTimeManager
 
    
 
-        public DataTable GetDataGrid(string name, string surname, string year, string month, string day)
+        private DataTable GetDataGrid(string name, string surname, string year, string month, string day)
         {
             try
             {
