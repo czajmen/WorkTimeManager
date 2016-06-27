@@ -131,6 +131,26 @@ namespace WorkTimeManager
 
         private void monthCalendar_DateChanged(object sender, DateRangeEventArgs e)
         {
+            try
+            {
+                DataBaseControl.OpenConnection(conn);
+
+                string queryText = string.Format("select CAST(w.data AS char) as data,w.ID, title,how_long,d.name from worklist w join departments d on w.departamentID=d.ID join users u on w.userID=u.ID where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' and w.userID='{3}'", monthCalendar.SelectionStart.Day.ToString(), monthCalendar.SelectionStart.Month.ToString(), monthCalendar.SelectionStart.Year.ToString(),_test.userID);
+
+                DataTable Data = new DataTable();
+                Data = DataBaseControl.SelecTest(conn, queryText);
+                dataGridView1.DataSource = Data;
+            }
+            catch (MySqlException myexc)
+            {
+
+                MessageBox.Show(myexc.Message);
+
+            }
+            finally
+            {
+                DataBaseControl.CloseConnection(conn);
+            }
 
         }
 

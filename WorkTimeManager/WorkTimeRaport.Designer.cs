@@ -97,7 +97,7 @@
             // Departments_Box
             // 
             this.Departments_Box.FormattingEnabled = true;
-            this.Departments_Box.Location = new System.Drawing.Point(597, 46);
+            this.Departments_Box.Location = new System.Drawing.Point(597, 170);
             this.Departments_Box.Name = "Departments_Box";
             this.Departments_Box.Size = new System.Drawing.Size(219, 33);
             this.Departments_Box.TabIndex = 7;
