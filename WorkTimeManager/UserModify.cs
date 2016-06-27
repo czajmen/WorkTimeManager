@@ -34,6 +34,8 @@ namespace WorkTimeManager
 
             Role_modify.DropDownStyle = ComboBoxStyle.DropDownList;
             Department_modify.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            Password_modify.PasswordChar = '*';
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

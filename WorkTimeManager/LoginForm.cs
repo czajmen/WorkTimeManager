@@ -17,6 +17,7 @@ namespace WorkTimeManager
         public LoginForm()
         {
             InitializeComponent();
+            Login_Password.PasswordChar = '*' ;
         }
 
         private void Login_Button_Click(object sender, EventArgs e)

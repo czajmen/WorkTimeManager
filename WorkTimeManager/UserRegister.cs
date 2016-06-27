@@ -40,6 +40,8 @@ namespace WorkTimeManager
 
             Role_Register.DropDownStyle = ComboBoxStyle.DropDownList;
             Department_Register.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            Password_register.PasswordChar = '*';
         }
 
         private void clear()
