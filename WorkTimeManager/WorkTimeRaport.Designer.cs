@@ -36,6 +36,7 @@
             this.LabelMinutes = new System.Windows.Forms.Label();
             this.Departments_Box = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(221, 115);
             this.Insert.TabIndex = 0;
-            this.Insert.Text = "Send";
+            this.Insert.Text = "Wyślij";
             this.Insert.UseVisualStyleBackColor = true;
             this.Insert.Click += new System.EventHandler(this.Insert_Click);
             // 
@@ -70,9 +71,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(576, 262);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 31);
+            this.label1.Size = new System.Drawing.Size(91, 31);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Topic";
+            this.label1.Text = "Temat";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // TextBoxMinutes
@@ -90,14 +91,14 @@
             this.LabelMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelMinutes.Location = new System.Drawing.Point(1172, 265);
             this.LabelMinutes.Name = "LabelMinutes";
-            this.LabelMinutes.Size = new System.Drawing.Size(97, 29);
+            this.LabelMinutes.Size = new System.Drawing.Size(82, 29);
             this.LabelMinutes.TabIndex = 5;
-            this.LabelMinutes.Text = "Minules";
+            this.LabelMinutes.Text = "Minuty";
             // 
             // Departments_Box
             // 
             this.Departments_Box.FormattingEnabled = true;
-            this.Departments_Box.Location = new System.Drawing.Point(597, 170);
+            this.Departments_Box.Location = new System.Drawing.Point(572, 112);
             this.Departments_Box.Name = "Departments_Box";
             this.Departments_Box.Size = new System.Drawing.Size(219, 33);
             this.Departments_Box.TabIndex = 7;
@@ -115,11 +116,21 @@
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(567, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 25);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Dział";
+            // 
             // WorkTimeRaport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1414, 863);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Departments_Box);
             this.Controls.Add(this.LabelMinutes);
@@ -148,6 +159,7 @@
         private System.Windows.Forms.Label LabelMinutes;
         private System.Windows.Forms.ComboBox Departments_Box;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label2;
 
     }
 }
