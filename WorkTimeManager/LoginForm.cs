@@ -17,6 +17,13 @@ namespace WorkTimeManager
         public LoginForm()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+  
             Login_Password.PasswordChar = '*' ;
         }
 

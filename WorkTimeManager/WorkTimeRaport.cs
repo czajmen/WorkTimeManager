@@ -26,6 +26,11 @@ namespace WorkTimeManager
             _test = test;
             
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
            
 
             for (int i = 0; i < departments.ilosc;i++ )

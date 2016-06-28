@@ -27,6 +27,11 @@ namespace WorkTimeManager
            userModify1.Visible = false;
            workerRaport1.Visible = false;
            companyReport1.Visible = false;
+
+           this.FormBorderStyle = FormBorderStyle.FixedDialog;
+           this.MaximizeBox = false;
+           this.MinimizeBox = false;
+           this.StartPosition = FormStartPosition.CenterScreen;
            
        
 
