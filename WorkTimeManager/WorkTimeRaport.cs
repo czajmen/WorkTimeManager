@@ -40,7 +40,7 @@ namespace WorkTimeManager
             }
 
            Departments_Box.SelectedIndex = 0;
-
+           Departments_Box.DropDownStyle = ComboBoxStyle.DropDownList;
            try
            {
                string queryText;
