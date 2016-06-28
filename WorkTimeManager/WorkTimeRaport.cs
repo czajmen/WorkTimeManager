@@ -43,8 +43,27 @@ namespace WorkTimeManager
                string month;
                string years;
                string fulldata;
-               day = monthCalendar.SelectionStart.Day.ToString();
-               month = "0"+monthCalendar.SelectionStart.Month.ToString();
+
+               if(monthCalendar.SelectionStart.Day>9)
+               {
+                   day = monthCalendar.SelectionStart.Day.ToString();
+               }
+               else
+               {
+                   day ="0"+ monthCalendar.SelectionStart.Day.ToString();
+               }
+               
+               if(monthCalendar.SelectionStart.Month>9)
+               {
+                   month = monthCalendar.SelectionStart.Month.ToString();
+               }
+
+               else
+               {
+                   month = "0" + monthCalendar.SelectionStart.Month.ToString();
+                   day = "0" + monthCalendar.SelectionStart.Day.ToString();
+               }
+               
                years = monthCalendar.SelectionStart.Year.ToString();
                fulldata = years + month + day;
 
@@ -81,15 +100,38 @@ namespace WorkTimeManager
             string years;
             string fulldata;
             day = monthCalendar.SelectionStart.Day.ToString();
-            month = "0" + monthCalendar.SelectionStart.Month.ToString();
+            
             years = monthCalendar.SelectionStart.Year.ToString();
-            fulldata = years + month + day;
+            
             title = Topic.Text.ToString();
             minutes= TextBoxMinutes.Text.ToString();
           // // MessageBox.Show(minutes);
+            if (monthCalendar.SelectionStart.Day > 9)
+            {
+                day = monthCalendar.SelectionStart.Day.ToString();
+            }
+            else
+            {
+                day = "0" + monthCalendar.SelectionStart.Day.ToString();
+            }
 
-          rok = monthCalendar.SelectionStart.Year.ToString() +"0"+ monthCalendar.SelectionStart.Month.ToString() + monthCalendar.SelectionStart.Day.ToString();
-          //MessageBox.Show(rok);
+            if (monthCalendar.SelectionStart.Month > 9)
+            {
+                rok = monthCalendar.SelectionStart.Year.ToString()+ monthCalendar.SelectionStart.Month.ToString() + day;
+                month = monthCalendar.SelectionStart.Month.ToString();
+                day = monthCalendar.SelectionStart.Day.ToString();
+            }
+            else
+            {
+            rok = monthCalendar.SelectionStart.Year.ToString() + "0" + monthCalendar.SelectionStart.Month.ToString() + day;
+            month = "0" + monthCalendar.SelectionStart.Month.ToString();
+           //day = "0" + monthCalendar.SelectionStart.Day.ToString();
+            }
+
+            fulldata = years + month + day;
+      //      MessageBox.Show(rok);
+                
+                //MessageBox.Show(rok);
    
             //insert= "insert into worklist values(null,1,"+title+","+rok+",2,34)";
         //   insert= "insert into worklist values(null,1,temat,"+rok+",2,"+minutes+")";
@@ -134,8 +176,29 @@ namespace WorkTimeManager
             try
             {
                 DataBaseControl.OpenConnection(conn);
+                string month;
+                string day;
 
-                string queryText = string.Format("select CAST(w.data AS char) as data,w.ID, title,how_long,d.name from worklist w join departments d on w.departamentID=d.ID join users u on w.userID=u.ID where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' and w.userID='{3}'", monthCalendar.SelectionStart.Day.ToString(), monthCalendar.SelectionStart.Month.ToString(), monthCalendar.SelectionStart.Year.ToString(),_test.userID);
+                if (monthCalendar.SelectionStart.Day > 9)
+                {
+                    day = monthCalendar.SelectionStart.Day.ToString();
+                }
+                else
+                {
+                    day = "0" + monthCalendar.SelectionStart.Day.ToString();
+                }
+
+                if (monthCalendar.SelectionStart.Month >9)
+                {
+                    month = monthCalendar.SelectionStart.Month.ToString();
+                }
+
+                else
+                {
+                    month = "0" + monthCalendar.SelectionStart.Month.ToString();
+                   // day = "0" + monthCalendar.SelectionStart.Day.ToString();
+                }
+                string queryText = string.Format("select CAST(w.data AS char) as data,w.ID, title,how_long,d.name from worklist w join departments d on w.departamentID=d.ID join users u on w.userID=u.ID where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' and w.userID='{3}'", day, month, monthCalendar.SelectionStart.Year.ToString(),_test.userID);
 
                 DataTable Data = new DataTable();
                 Data = DataBaseControl.SelecTest(conn, queryText);
