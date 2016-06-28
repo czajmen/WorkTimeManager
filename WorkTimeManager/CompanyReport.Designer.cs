@@ -51,6 +51,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.raport_Date = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -280,10 +282,31 @@
             this.label8.TabIndex = 29;
             this.label8.Text = "Godzin";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(381, 32);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(127, 13);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Raport formowy za okres:";
+            // 
+            // raport_Date
+            // 
+            this.raport_Date.AutoSize = true;
+            this.raport_Date.Location = new System.Drawing.Point(529, 32);
+            this.raport_Date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.raport_Date.Name = "raport_Date";
+            this.raport_Date.Size = new System.Drawing.Size(0, 13);
+            this.raport_Date.TabIndex = 31;
+            // 
             // CompanyReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.raport_Date);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -340,5 +363,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label raport_Date;
     }
 }

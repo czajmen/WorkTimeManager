@@ -70,7 +70,6 @@ namespace WorkTimeManager
                 string queryText;
                 DataBaseControl.OpenConnection(conn);
 
-
                 string[] mostDep = getMostActivWorker(month, year).Split(' ');
 
                 if (string.IsNullOrEmpty(month))
@@ -80,7 +79,7 @@ namespace WorkTimeManager
                 else
                 {
                     month = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month.ToString();  //Konwersja miesiaca pisanego na liczbę  "Czerwiec" -> "6"
-                    queryText = string.Format("select  sum(w.how_long) from users u join worklist w on u.ID= w.userID where year(w.data)='{0}' and month(w.data)='{1}' and u.surname='{2}'", year, month, mostDep);
+                    queryText = string.Format("select  sum(w.how_long) from users u join worklist w on u.ID= w.userID where year(w.data)='{0}' and month(w.data)='{1}' and u.name='{2}' and u.surname='{3}'", year, month, mostDep[0],mostDep[1]);
                 }
                 List<string> result = new List<string>();
 
@@ -98,9 +97,8 @@ namespace WorkTimeManager
             catch
             {
                 return "Brak Danych";
-
             }
-
+         
 
             finally
             {
@@ -117,12 +115,12 @@ namespace WorkTimeManager
 
                if (string.IsNullOrEmpty(month))
                {
-                    queryText = string.Format("Select concat(u.name,' ',u.surname) from users u join worklist w on u.ID = w.userID join departments d on w.departamentID=d.ID where year(w.data)='{0}' group by d.name , u.ID order by sum(w.how_long)", year);
+                    queryText = string.Format("Select concat(u.name,' ',u.surname) from users u join worklist w on u.ID = w.userID join departments d on w.departamentID=d.ID where year(w.data)='{0}' group by d.name , u.ID order by sum(w.how_long) desc", year);
                }
                else
                 {
                     month = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month.ToString();  //Konwersja miesiaca pisanego na liczbę  "Czerwiec" -> "6"
-                    queryText = string.Format("Select concat_ws(u.name,' ',u.surname) from users u join worklist w on u.ID = w.userID join departments d on w.departamentID=d.ID where year(w.data)='{0}' and month(w.data)='{1}' group by d.name , u.ID order by sum(w.how_long)", year,month);
+                    queryText = string.Format("Select concat(u.name,' ',u.surname) from users u join worklist w on u.ID = w.userID join departments d on w.departamentID=d.ID where year(w.data)='{0}' and month(w.data)='{1}' group by d.name , u.ID order by sum(w.how_long) desc", year,month);
                 }
                 List<string> result = new List<string>();
                 result = DataBaseControl.Select(conn, queryText);
@@ -196,7 +194,7 @@ namespace WorkTimeManager
                 else
                 {
                     month = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month.ToString();  //Konwersja miesiaca pisanego na liczbę  "Czerwiec" -> "6"
-                    queryText = string.Format("select sum(how_long) from departments d join worklist w on d.ID= w.departamentID where year(w.data)='{0}'  and month(w.data)='{1}' order by sum(how_long) limit 1", year, month);
+                    queryText = string.Format("select sum(how_long) from departments d join worklist w on d.ID= w.departamentID where year(w.data)='{0}'  and month(w.data)='{1}' group by d.ID order by sum(how_long) desc limit 1", year, month);
                 }
                 List<string> result = new List<string>();
 
@@ -217,8 +215,7 @@ namespace WorkTimeManager
                 return "Brak Danych";
 
             }
-         
-      
+          
             finally
             {
                 DataBaseControl.CloseConnection(conn);

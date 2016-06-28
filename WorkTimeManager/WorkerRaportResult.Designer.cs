@@ -37,15 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.TotalWork = new System.Windows.Forms.Label();
             this.mostdep = new System.Windows.Forms.Label();
             this.mostDayDate = new System.Windows.Forms.Label();
-            this.overhours = new System.Windows.Forms.Label();
             this.MostDayTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,10 +85,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(117, 224);
+            this.dataGridView1.Location = new System.Drawing.Point(61, 224);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(442, 232);
+            this.dataGridView1.Size = new System.Drawing.Size(563, 232);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -107,7 +104,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 130);
+            this.label3.Location = new System.Drawing.Point(188, 145);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(175, 13);
             this.label3.TabIndex = 10;
@@ -131,15 +128,6 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "godzin";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(293, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Nadgodziny;";
-            // 
             // TotalWork
             // 
             this.TotalWork.AutoSize = true;
@@ -152,7 +140,7 @@
             // mostdep
             // 
             this.mostdep.AutoSize = true;
-            this.mostdep.Location = new System.Drawing.Point(205, 130);
+            this.mostdep.Location = new System.Drawing.Point(380, 145);
             this.mostdep.Name = "mostdep";
             this.mostdep.Size = new System.Drawing.Size(35, 13);
             this.mostdep.TabIndex = 15;
@@ -166,14 +154,6 @@
             this.mostDayDate.Size = new System.Drawing.Size(10, 13);
             this.mostDayDate.TabIndex = 16;
             this.mostDayDate.Text = " ";
-            // 
-            // overhours
-            // 
-            this.overhours.AutoSize = true;
-            this.overhours.Location = new System.Drawing.Point(378, 130);
-            this.overhours.Name = "overhours";
-            this.overhours.Size = new System.Drawing.Size(0, 13);
-            this.overhours.TabIndex = 17;
             // 
             // MostDayTime
             // 
@@ -202,28 +182,16 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Wpisy pracownika w danym okresie czasu:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(425, 130);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "godzin";
-            // 
             // DayWorkerRaportResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.MostDayTime);
-            this.Controls.Add(this.overhours);
             this.Controls.Add(this.mostDayDate);
             this.Controls.Add(this.mostdep);
             this.Controls.Add(this.TotalWork);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -252,14 +220,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label TotalWork;
         private System.Windows.Forms.Label mostdep;
         private System.Windows.Forms.Label mostDayDate;
-        private System.Windows.Forms.Label overhours;
         private System.Windows.Forms.Label MostDayTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
     }
 }

@@ -99,6 +99,7 @@ namespace WorkTimeManager
             string month;
             string years;
             string fulldata;
+            string queryText;
             day = monthCalendar.SelectionStart.Day.ToString();
             
             years = monthCalendar.SelectionStart.Year.ToString();
@@ -141,9 +142,43 @@ namespace WorkTimeManager
            try
            {
                DataBaseControl.OpenConnection(conn);
-               string queryText = string.Format("insert into worklist values(null,{0},'{1}',{2},{3},{4})",_test.userID,title,rok,department,minutes);
-               DataBaseControl.insertData(conn, queryText);
-               queryText = string.Format("select CAST(w.data AS char) as data,w.ID, title,how_long,d.name from worklist w join departments d on w.departamentID=d.ID where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' ", day, month, years);
+
+             bool  canRegister = true;
+
+               foreach (Control x in this.Controls)
+               {
+
+
+                   if (x.Name != dataGridView1.Name  &&  x.Name!=monthCalendar.Name)
+                   {
+                       if (string.IsNullOrEmpty(x.Text) || string.IsNullOrWhiteSpace(x.Text))
+                       {
+                           errorProvider1.SetError(x, "To pole nie może zostać puste!");
+                           canRegister = false;
+
+                       }
+                   }
+                 
+               }
+
+               if (canRegister)
+               {
+                    queryText = string.Format("insert into worklist values(null,{0},'{1}',{2},{3},{4})", _test.userID, title, rok, department, minutes);
+                   DataBaseControl.insertData(conn, queryText);
+
+                   errorProvider1.Clear();
+                  
+               }
+               else
+               {
+                   MessageBox.Show("Aby zarejestrować użytkownika wypełnij wszystkie pola!");
+               }
+
+
+
+
+
+               queryText = string.Format("select CAST(w.data AS char) as data,w.ID ID, title,how_long minuty,d.name dział from worklist w join departments d on w.departamentID=d.ID where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' ", day, month, years);
 
                DataTable Data = new DataTable();
                Data = DataBaseControl.SelecTest(conn, queryText);

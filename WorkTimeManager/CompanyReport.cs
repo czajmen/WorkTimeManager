@@ -35,6 +35,8 @@ namespace WorkTimeManager
             {               
                 string year = dateTimePicker1.Text.ToString();
 
+                raport_Date.Text = year;
+
                 dataGridView1.DataSource = raport.getWorkersGrid(null, year);
                 dataGridView2.DataSource = raport.getDepartmensGrid(null, year);
                 workTimeSum.Text = raport.GetWorkTimeSum(null, year);
@@ -46,6 +48,8 @@ namespace WorkTimeManager
             }
             else if (Draport.Checked)  //Raport miesięczny
             {
+
+                raport_Date.Text = dateTimePicker2.Text.ToString();
                 string[] date = dateTimePicker2.Text.ToString().Split(' ');
 
                 dataGridView1.DataSource = raport.getWorkersGrid(date[0], date[1]);

@@ -42,12 +42,11 @@ namespace WorkTimeManager
 
             TotalWork.Text = GeneratedRaportResult[0];
             mostdep.Text = GeneratedRaportResult[1];
-            overhours.Text = GeneratedRaportResult[2];
 
             if(which==1)
             {
-                mostDayDate.Text = GeneratedRaportResult[3];
-                MostDayTime.Text = GeneratedRaportResult[4];
+                mostDayDate.Text = GeneratedRaportResult[2];
+                MostDayTime.Text = GeneratedRaportResult[3];
             }
             
         }

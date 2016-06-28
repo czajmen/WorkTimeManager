@@ -27,15 +27,13 @@ namespace WorkTimeManager
             if (which == 2)  //Dzienny
             {
                 result.Add(GetAllWordHours(tmpdate[0], tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]));
-                result.Add(mostWorkedDepartment(tmpdate[0], tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]));
-                result.Add(GetUserOverHours(tmpdate[0], tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1], GetAllWordHours(tmpdate[0], tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1])));
+                result.Add(mostWorkedDepartment(tmpdate[0], tmpdate[1], tmpdate[2], tmpworker[0], tmpworker[1]));             
 
             }
             else if (which == 1) //Miesięczny
             {
                 result.Add(GetAllWordHours(null, tmpdate[0], tmpdate[1], tmpworker[0], tmpworker[1]));
-                result.Add(mostWorkedDepartment(null, tmpdate[0], tmpdate[1], tmpworker[0], tmpworker[1]));
-                result.Add(GetUserOverHours(null, tmpdate[0], tmpdate[1], tmpworker[0], tmpworker[1], GetAllWordHours(null, tmpdate[0], tmpdate[1], tmpworker[0], tmpworker[1])));
+                result.Add(mostWorkedDepartment(null, tmpdate[0], tmpdate[1], tmpworker[0], tmpworker[1]));           
                 result.AddRange(GetMostWorkedDay(null, tmpdate[0], tmpdate[1], tmpworker[0], tmpworker[1]));
             }
             else
@@ -63,40 +61,6 @@ namespace WorkTimeManager
         }
 
 
-
-
-        private string GetUserOverHours(string day, string month, string year, string name, string surname, string TotalWork)
-        {
-
-            try
-            {
-                string result;
-
-                double worktime = Convert.ToInt16(TotalWork);
-                worktime = (worktime) - 8;
-
-
-                if (worktime > 0)
-                {
-                    result = worktime.ToString();
-                }
-                else
-                {
-                    result = "0";
-                }
-
-                return result;
-
-            }
-            catch
-            {
-                MessageBox.Show("Wystąpił nieznany bład!");
-                return "0";
-            }
-
-
-        }
-
         private List<string> GetMostWorkedDay(string day, string month, string year, string name, string surname)  //Poprawić
         {
             string DateMostWorkedDay;
@@ -112,7 +76,11 @@ namespace WorkTimeManager
 
                 List<string> tmpresult = DataBaseControl.Select(conn, queryText);
                 DateMostWorkedDay = DataBaseControl.ResultToString(tmpresult);
-                hoursCount = GetAllWordHours(day, month, year, name, surname);
+
+                string[] tmp_date = DateMostWorkedDay.Split('-');
+
+
+                hoursCount = GetAllWordHours(tmp_date[2], month, tmp_date[0], name, surname);
 
 
                 if (string.IsNullOrEmpty(DateMostWorkedDay) || string.IsNullOrWhiteSpace(DateMostWorkedDay))
@@ -131,6 +99,13 @@ namespace WorkTimeManager
                 MessageBox.Show(myexc.Message);
                 return null;
             }
+            catch
+            {
+                result.Add("Brak Danych");
+                result.Add("Brak Danych");
+                return result;
+
+            }
             finally
             {
                 DataBaseControl.CloseConnection(conn);
@@ -145,16 +120,16 @@ namespace WorkTimeManager
             {
                 string queryText;
 
-                month = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month.ToString();
+               month = DateTime.ParseExact(month, "MMMM", CultureInfo.CurrentCulture).Month.ToString();
                 DataBaseControl.OpenConnection(conn);
                 if (string.IsNullOrEmpty(day))
                 {
-                    queryText = string.Format("Select d.name from worklist w join users u on w.userID=u.ID join departments d on d.ID=w.departamentID where u.name='{0}' and  u.surname='{1}' and year(w.data)='{2}' and month(w.data)='{3}' order by sum(w.how_long) limit 1", name, surname, year, month);
+                    queryText = string.Format("Select d.name from worklist w join users u on w.userID=u.ID join departments d on d.ID=w.departamentID where u.name='{0}' and  u.surname='{1}' and year(w.data)='{2}' and month(w.data)='{3}' group by 1 order by sum(w.how_long) desc limit 1", name, surname, year, month);
 
                 }
                 else
                 {
-                    queryText = string.Format("Select d.name from worklist w join users u on w.userID=u.ID join departments d on d.ID=w.departamentID where u.name='{0}' and  u.surname='{1}' and year(w.data)='{2}' and month(w.data)='{3}' and day(w.data)='{4}' order by sum(w.how_long) limit 1", name, surname, year, month, day);
+                    queryText = string.Format("Select d.name from worklist w join users u on w.userID=u.ID join departments d on d.ID=w.departamentID where u.name='{0}' and  u.surname='{1}' and year(w.data)='{2}' and month(w.data)='{3}' and day(w.data)='{4}' group by 1 order by sum(w.how_long) desc limit 1", name, surname, year, month, day);
                 }
 
                 List<string> time = new List<string>();
@@ -173,6 +148,11 @@ namespace WorkTimeManager
 
                 MessageBox.Show(myexc.Message);
                 return null;
+            }
+            catch
+            {
+                return "Brak Danych";
+
             }
             finally
             {
