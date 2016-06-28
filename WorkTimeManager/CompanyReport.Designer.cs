@@ -288,9 +288,9 @@
             this.label9.Location = new System.Drawing.Point(381, 32);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(127, 13);
+            this.label9.Size = new System.Drawing.Size(123, 13);
             this.label9.TabIndex = 30;
-            this.label9.Text = "Raport formowy za okres:";
+            this.label9.Text = "Raport firmowy za okres:";
             // 
             // raport_Date
             // 

@@ -106,9 +106,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(188, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 13);
+            this.label3.Size = new System.Drawing.Size(176, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Najwięcej szasu pracował w dziale:";
+            this.label3.Text = "Najwięcej czasu pracował w dziale:";
             // 
             // label4
             // 

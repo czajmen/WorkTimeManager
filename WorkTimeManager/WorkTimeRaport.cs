@@ -75,7 +75,7 @@ namespace WorkTimeManager
 
 
              //  queryText = string.Format("SELECT CAST(w.data AS char) as data, w.title, how_long, ID FROM time_manager.worklist w");
-               queryText = string.Format("select CAST(w.data AS char) as data,ID, title,how_long from worklist w where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' ", day, month, years);
+               queryText = string.Format("select CAST(w.data AS char) as data,w.ID, title,how_long,d.name from worklist w join departments d on w.departamentID=d.ID join users u on w.userID=u.ID where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' and w.userID='{3}' ", day, month, years,_test.userID);
 
                DataTable Data = new DataTable();
                Data = DataBaseControl.SelecTest(conn, queryText);
@@ -94,9 +94,7 @@ namespace WorkTimeManager
 
         private void Insert_Click(object sender, EventArgs e)
         {
-          //  string insert;
-            string rok;
-            
+            string rok;          
             string title;
             string minutes;
             string department;
@@ -108,10 +106,10 @@ namespace WorkTimeManager
             day = monthCalendar.SelectionStart.Day.ToString();
             
             years = monthCalendar.SelectionStart.Year.ToString();
-            
+           
             title = Topic.Text.ToString();
             minutes= TextBoxMinutes.Text.ToString();
-          // // MessageBox.Show(minutes);
+
             if (monthCalendar.SelectionStart.Day > 9)
             {
                 day = monthCalendar.SelectionStart.Day.ToString();
@@ -131,17 +129,10 @@ namespace WorkTimeManager
             {
             rok = monthCalendar.SelectionStart.Year.ToString() + "0" + monthCalendar.SelectionStart.Month.ToString() + day;
             month = "0" + monthCalendar.SelectionStart.Month.ToString();
-           //day = "0" + monthCalendar.SelectionStart.Day.ToString();
             }
 
             fulldata = years + month + day;
-      //      MessageBox.Show(rok);
-                
-                //MessageBox.Show(rok);
-   
-            //insert= "insert into worklist values(null,1,"+title+","+rok+",2,34)";
-        //   insert= "insert into worklist values(null,1,temat,"+rok+",2,"+minutes+")";
-          //  raport test22 = new raport(insert);
+
           department = (this.Departments_Box.SelectedIndex + 1).ToString();
 
            try
@@ -152,8 +143,6 @@ namespace WorkTimeManager
 
                foreach (Control x in this.Controls)
                {
-
-
                    if (x.Name != dataGridView1.Name  &&  x.Name!=monthCalendar.Name)
                    {
                        if (string.IsNullOrEmpty(x.Text) || string.IsNullOrWhiteSpace(x.Text))
@@ -170,21 +159,15 @@ namespace WorkTimeManager
                {
                     queryText = string.Format("insert into worklist values(null,{0},'{1}',{2},{3},{4})", _test.userID, title, rok, department, minutes);
                    DataBaseControl.insertData(conn, queryText);
-
                    errorProvider1.Clear();
                   
                }
                else
                {
-                   MessageBox.Show("Aby zarejestrować użytkownika wypełnij wszystkie pola!");
+                   MessageBox.Show("Aby Wysłać raport uzupełnij wszystkie wymagane pola!!");
                }
 
-
-
-
-
-               queryText = string.Format("select CAST(w.data AS char) as data,w.ID ID, title,how_long minuty,d.name dział from worklist w join departments d on w.departamentID=d.ID where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' ", day, month, years);
-
+               queryText = string.Format("select CAST(w.data AS char) as data,w.ID, title,how_long,d.name from worklist w join departments d on w.departamentID=d.ID join users u on w.userID=u.ID where  day(w.data)='{0}' and month(w.data)='{1}' and year(w.data)='{2}' and w.userID='{3}' ", day, month, years, _test.userID);
                DataTable Data = new DataTable();
                Data = DataBaseControl.SelecTest(conn, queryText);
                dataGridView1.DataSource = Data;
